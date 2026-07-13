@@ -1,11 +1,23 @@
-# Physical AI Governance — an open standard for embodied AI safety
+# AI Governors — a global community stewarding the Physical AI Governance standard
 
 > **We spent three years learning to govern AI that writes. We must now govern AI that can apply force.**
 > When AI gets a body, a hallucination is no longer a wrong answer — it is a physical action.
 
-This repository is a **call for participants** and a **working draft** of two open, vendor-neutral standards for autonomous embodied AI (humanoids, general-purpose mobile robots, and any AI system that can move and apply force among people), plus the **API** that makes them enforceable and provable.
+**AI Governors** ([aigovernors.org](https://aigovernors.org)) is an open, global community stewarding **PAIG — the Physical AI Governance standard**: open, vendor-neutral working drafts for autonomous embodied AI (humanoids, general-purpose mobile robots, and any AI system that can move and apply force among people), plus the **API** that makes them enforceable and provable. This repository is the standard's source of truth and the community's public record.
 
-Convened by **Cognita GRC** · Draft **v0.1** · Status: **request for comment**
+Convened by **Cognita GRC** (steward, not owner) · Draft **v0.1** · Status: **request for comment** · Every seat open
+
+---
+
+## The community
+
+The standard is stewarded by one named **AI Governor** per region — every US state, every Canadian province and territory, every EU member, every African country, every country worldwide — mirroring how ISO works through one national member body per country. Chapters contribute regional reality (regulations, incidents, deployment norms) into the drafts so the standard isn't written only by whoever was in the room first.
+
+**Plainly: "AI Governor" is a community designation, not a government position, official title, or public office, and it confers no legal or regulatory authority. It is earned, not claimed** — one substantive draft review per release cycle, one local session per cycle, and representing your region in the working group. The full model — what the role is, what it isn't, what earns and keeps it — is at **[aigovernors.org/governors](https://aigovernors.org/governors)**.
+
+**Every seat is open at launch** — the [Wall of Governors](https://aigovernors.org/#governors) shows 255 seats, all open, and will only ever show people currently doing the work. **Apply:** open an Issue [*"AI Governor: \<your region\>"*](https://github.com/KGEmmanuel/physical-ai-governance/issues/new?template=ai-governor.yml) using the template, or email guillaume@cognitagrc.io (same standing as an Issue).
+
+As the community grows, the proposed shape of the full body — regional Chapters × value-chain Chambers, functional committees, an open cadence, structural anti-capture — is **[`FORUM-OPERATING-MODEL.md`](FORUM-OPERATING-MODEL.md)** (PAIG-4): a **proposed model, not an operating institution — it has no members, chairs, endorsements, or affiliations today**, and it names categories, never companies. Comment on it in [issue #3](https://github.com/KGEmmanuel/physical-ai-governance/issues/3).
 
 ---
 
@@ -29,11 +41,17 @@ This repo drafts both.
 
 ---
 
-## What's here
+## What's here (the document register)
 
-- **[`force-continuum/FORCE-CONTINUUM.md`](force-continuum/FORCE-CONTINUUM.md)** — the **Physical AI Force Continuum (PAFC)**: force levels PAFC‑0…5, the human-control tiers each requires, and the enforcement rules. *The core contribution.*
-- **[`embodied-ai-standard/EMBODIED-AI-GOVERNANCE.md`](embodied-ai-standard/EMBODIED-AI-GOVERNANCE.md)** — **"ISO 42001 for Robotics"**: a management-system + technical-control standard built on the six requirements — hardware e-stop, certified force limits, cryptographically-verifiable audit logs, unique digital identity, continuous safety monitoring, clear human accountability — each mapped to the standards above.
-- **[`api/GOVERNANCE-API.md`](api/GOVERNANCE-API.md)** — the **universal Physical AI Governance API**: identity & attestation, force-level authorization, tamper-evident audit-log + offline verification, continuous monitoring, and the human-accountability chain. The interoperable layer Cognita (and others) can provide to robotics companies so governance is *machine-enforced and provable*, not promised.
+| Doc ID | Document | What it is |
+|---|---|---|
+| PAIG-1 | [`force-continuum/FORCE-CONTINUUM.md`](force-continuum/FORCE-CONTINUUM.md) | The **Physical AI Force Continuum (PAFC)** — force levels PAFC-0…5, the human-control tiers each requires, and the enforcement rules. *The core contribution.* **RFC open: [issue #1](https://github.com/KGEmmanuel/physical-ai-governance/issues/1).** |
+| PAIG-2 | [`embodied-ai-standard/EMBODIED-AI-GOVERNANCE.md`](embodied-ai-standard/EMBODIED-AI-GOVERNANCE.md) | **"ISO 42001 for Robotics"** (working title) — a management system + six mandatory technical controls: hardware e-stop, certified force limits, verifiable audit logs, unique digital identity, continuous monitoring, clear human accountability. |
+| PAIG-3 | [`api/GOVERNANCE-API.md`](api/GOVERNANCE-API.md) | The **Physical AI Governance API** — identity & attestation, force-level authorization, tamper-evident audit log + offline verification, monitoring, and the human-accountability chain. |
+| PAIG-0 | [`GOVERNANCE.md`](GOVERNANCE.md) | Working group & governance — the rough-consensus decision model, first-session agenda, roadmap. |
+| PAIG-4 | [`FORUM-OPERATING-MODEL.md`](FORUM-OPERATING-MODEL.md) | The Forum's **proposed** operating model (Chapters × Chambers × Committees, anti-capture design). A v1 proposal — nothing in it is operational until seated. |
+
+The site — [aigovernors.org](https://aigovernors.org) (this repo's `index.html`, plus [`/governors`](https://aigovernors.org/governors) and [`/forum`](https://aigovernors.org/forum)) — renders all drafts with a document register, the Wall of Governors, and the participation paths.
 
 ## Design principles (non-negotiable)
 
@@ -50,18 +68,15 @@ This repo drafts both.
 
 We're forming an open working group to take this from v0.1 to a citable standard. We want **roboticists, safety & functional-safety engineers, standards-body members (ISO/TC 299, IEC), regulators, law-enforcement and public-safety experts, AI-governance leaders, ethicists, and insurers.**
 
-**First deliverable:** ratify **Force Continuum v0.1** (levels, human-control coupling, enforcement rules) as an RFC.
-**How to join:** open an Issue titled *"Join: [role]"*, or contact Cognita GRC · app.cognitagrc.io.
+**First deliverable:** ratify **Force Continuum v0.1** (levels, human-control coupling, enforcement rules) as an RFC — comment now on [issue #1](https://github.com/KGEmmanuel/physical-ai-governance/issues/1).
+**How to join:** open an Issue titled *"Join: [role]"* (template provided), become your region's [AI Governor](https://aigovernors.org/governors), or email guillaume@cognitagrc.io.
 
 ## Contributing & governance
 
 - Propose changes via pull request against the relevant draft; substantive changes need an Issue + rationale first.
-- Decisions by the working group; a lightweight consensus model documented in `GOVERNANCE.md` (to be ratified at the first session).
+- Decisions by the working group; a lightweight consensus model documented in [`GOVERNANCE.md`](GOVERNANCE.md) (to be ratified at the first session).
 - **License:** standard text under **CC BY 4.0** (see [`LICENSE`](LICENSE)); the API specification under **Apache-2.0** (see [`api/LICENSE`](api/LICENSE)). Open by design — a public-safety standard must be free to adopt.
-- **Website:** [aigovernors.org](https://aigovernors.org) — the community site, document register, and embedded drafts (`index.html` in this repo). The former address, physicalai.cognitagrc.io, permanently redirects here.
+- **Website:** [aigovernors.org](https://aigovernors.org) — the community site, document register, and embedded drafts (`index.html` in this repo).
+- **Translations** (FR/ES first) are open work — [issue #2](https://github.com/KGEmmanuel/physical-ai-governance/issues/2).
 
-## The AI Governors community
-
-The standard is stewarded by **AI Governors** — a global community with one named steward seat per region (every US state, every Canadian province and territory, every EU member, every African country, every country worldwide), mirroring how ISO works through national member bodies. An **AI Governor** is a community steward/advocate designation — **not a government position, official title, or public office** — earned by a light but real commitment: review one draft per release cycle, run one local session, and represent the region in the working group. **Every seat is open at launch.** Apply with a [GitHub Issue "AI Governor: \<your region\>"](https://github.com/KGEmmanuel/physical-ai-governance/issues/new?template=ai-governor.yml) or by email.
-
-*This is a draft for public comment, not legal advice or a certification. It is designed to complement and extend ISO 10218:2025, ISO 13482, the EU Machinery Regulation 2023/1230, the EU AI Act, and ISO/IEC 42001 — not replace them.*
+*This is a draft for public comment, not legal advice or a certification. It is designed to complement and extend ISO 10218:2025, ISO 13482, the EU Machinery Regulation 2023/1230, the EU AI Act, and ISO/IEC 42001 — not replace them. No members, endorsements, adoptions, or filled seats are claimed; every seat and convenor role is open. Cognita GRC convenes and stewards; it does not own the standard.*

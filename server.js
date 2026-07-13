@@ -29,6 +29,15 @@ http.createServer((req, res) => {
   let urlPath;
   try { urlPath = decodeURIComponent((req.url || "/").split("?")[0]); }
   catch { res.writeHead(400); return res.end("bad request"); }
+  if (urlPath === "/__version") {
+    // deployed-commit proof: Railway injects RAILWAY_GIT_COMMIT_SHA on GitHub-triggered deploys
+    res.writeHead(200, { "Content-Type": MIME[".json"], "Cache-Control": "no-store" });
+    return res.end(JSON.stringify({
+      commit: process.env.RAILWAY_GIT_COMMIT_SHA || null,
+      branch: process.env.RAILWAY_GIT_BRANCH || null,
+      deployedVia: process.env.RAILWAY_GIT_COMMIT_SHA ? "github-push" : "cli-or-unknown",
+    }));
+  }
   let filePath = path.normalize(path.join(ROOT, urlPath));
   if (!filePath.startsWith(ROOT)) { res.writeHead(403); return res.end("forbidden"); }
   if (urlPath === "/" || !path.extname(filePath)) {
