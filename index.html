@@ -6,7 +6,7 @@
 <title>AI Governors — stewarding the Physical AI Governance standard</title>
 <meta name="description" content="AI Governors: a global community stewarding PAIG — an open, vendor-neutral standard for autonomous embodied AI (the Force Continuum, an ISO-42001-for-Robotics governance standard, and the API that makes them provable). One community steward per region, every seat open. Convened by Cognita GRC (steward, not owner)." />
 <link rel="canonical" href="https://aigovernors.org/" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23FFFFFF'/%3E%3Cg fill='none' stroke='%231F5FA8' stroke-width='4.5' stroke-linecap='round'%3E%3Cpath d='M32 6 A26 26 0 1 0 58 32'/%3E%3Cline x1='17' y1='41' x2='47' y2='41'/%3E%3C/g%3E%3Ccircle cx='49' cy='14' r='5' fill='%231F5FA8'/%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23FFFFFF'/%3E%3Ccircle cx='32' cy='32' r='29' fill='none' stroke='%231F5FA8' stroke-width='1.5' opacity='.4'/%3E%3Cpath d='M52.5 17.5 A25 25 0 1 0 57 32' fill='none' stroke='%231F5FA8' stroke-width='5' stroke-linecap='round'/%3E%3Cline x1='34' y1='32' x2='57' y2='32' stroke='%231F5FA8' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%231F5FA8'/%3E%3C/svg%3E" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="AI Governors" />
 <meta property="og:url" content="https://aigovernors.org/" />
@@ -59,9 +59,10 @@
   nav .row{display:flex;align-items:center;gap:20px;height:68px}
   .brand{display:flex;align-items:center;gap:11px;color:var(--text)}
   .brand .emblem{color:var(--cyan);flex:none}
-  .wordmark{font-weight:700;letter-spacing:2.5px;font-size:14.5px}
+  .wordmark{font-weight:700;letter-spacing:2.5px;font-size:14.5px;white-space:nowrap}
   .endorser{color:var(--dim);font-size:11.5px;font-weight:600;letter-spacing:.3px;border-left:1px solid var(--line);padding-left:11px;white-space:nowrap}
   nav .links{margin-left:auto;display:flex;gap:22px;align-items:center;font-size:14px}
+  nav .links a{white-space:nowrap}
   nav .links a{color:var(--muted)} nav .links a:hover{color:var(--text)}
   .btn{display:inline-block;padding:11px 20px;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;border:1px solid transparent;white-space:nowrap}
   .btn-primary{background:var(--cyan);color:#fff}
@@ -71,7 +72,7 @@
   /* hero — charter register: serif, still, ruled */
   header.hero{padding:80px 0 48px;border-bottom:1px solid var(--line)}
   .eyebrow{color:var(--cyan);font-weight:700;letter-spacing:3px;font-size:12.5px;text-transform:uppercase}
-  h1{font-family:var(--serif);font-size:52px;line-height:1.08;margin:18px 0 14px;font-weight:700}
+  h1{font-family:var(--serif);font-size:clamp(40px,5vw,58px);line-height:1.06;letter-spacing:-.5px;margin:18px 0 14px;font-weight:700}
   h1 .accent{color:var(--cyan)}
   .lede{font-size:20px;color:var(--muted);max-width:760px}
   .pill{display:inline-block;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:700;border:1px solid var(--line);color:var(--muted);background:var(--bg2);white-space:nowrap}
@@ -80,10 +81,17 @@
   .status-draft{color:var(--amber);border-color:#D9B25A;background:#FBF6E9}
   .status-forming{color:var(--cyan);border-color:var(--cyan);background:#EDF3FB}
   .hero-cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
-  section{padding:64px 0;border-bottom:1px solid var(--line)}
-  h2{font-family:var(--serif);font-size:31px;font-weight:700;margin:0 0 10px}
+  .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+  .hero-photo{margin:0}
+  .hero-photo img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--line)}
+  .hero-photo figcaption{font-size:12.5px;color:var(--dim);margin-top:10px;line-height:1.5;max-width:46ch}
+  section{padding:clamp(64px,8vw,104px) 0;border-bottom:1px solid var(--line)}
+  section.band{background:var(--bg2)}
+  section.band .card,section.band .seat,section.band .s,section.band .role,section.band .flow .step,section.band .gov-search{background:var(--bg1)}
+  .kicker{font-size:12px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--dim);margin:0 0 14px}
+  h2{font-family:var(--serif);font-size:clamp(29px,3.2vw,37px);letter-spacing:-.2px;font-weight:700;margin:0 0 12px}
   .secsub{font-family:var(--serif);font-size:23px;font-weight:700;margin:38px 0 10px}
-  .sub{color:var(--muted);margin:0 0 28px;max-width:760px}
+  .sub{color:var(--muted);font-size:16.5px;line-height:1.62;margin:0 0 28px;max-width:70ch}
   /* committee scope card */
   .scopecard{margin-top:30px;background:var(--bg1);border:1px solid var(--line);border-radius:16px;padding:22px 26px;max-width:920px}
   .scopecard .label{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
@@ -137,7 +145,7 @@
   details.region{background:var(--bg1);border:1px solid var(--line);border-radius:14px;margin:10px 0}
   details.region summary{cursor:pointer;padding:14px 18px;font-weight:700;display:flex;gap:12px;align-items:center;list-style:none;color:var(--text)}
   details.region summary::-webkit-details-marker{display:none}
-  details.region summary .n{color:var(--dim);font-weight:600;font-size:13px}
+  details.region summary .n{color:var(--dim);font-weight:600;font-size:13px;white-space:nowrap}
   details.region summary .chev{margin-left:auto;color:var(--dim);transition:transform .15s}
   details[open].region summary .chev{transform:rotate(90deg)}
   .seats{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px;padding:2px 18px 18px}
@@ -206,6 +214,31 @@
   .md td{color:var(--muted)}
   .md em{color:var(--dim)}
   .md hr{border:none;border-top:1px solid var(--line);margin:24px 0}
+  /* Force Continuum signature graphic */
+  .pafc{margin:30px 0 0;border:1px solid var(--line);border-radius:16px;background:var(--bg1);padding:6px 28px 18px}
+  .pafc-head,.prow{display:grid;grid-template-columns:84px minmax(220px,1.15fr) minmax(150px,1fr) 230px;gap:20px;align-items:center}
+  .pafc-head{padding:16px 0 12px;border-bottom:1px solid var(--line);font-size:11px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--dim)}
+  .prow{padding:14px 0;border-bottom:1px solid var(--line)}
+  .prow:last-of-type{border-bottom:none}
+  .plvl{font-weight:800;font-size:13.5px;color:var(--text);letter-spacing:.4px}
+  .pname strong{display:block;font-size:15.5px;color:var(--text)}
+  .pname span{font-size:13px;color:var(--dim);line-height:1.5}
+  .pbar{height:12px;background:var(--bg2);border-radius:6px;overflow:hidden}
+  .pbar i{display:block;height:100%;border-radius:6px}
+  .phc{display:flex;align-items:center;gap:10px}
+  .hcchip{font-weight:800;font-size:12px;border-radius:6px;padding:4px 9px;white-space:nowrap;border:1px solid var(--line);background:var(--bg2);color:var(--text)}
+  .hcchip.hc1{border-color:#A9C4E6;background:#EDF3FB;color:var(--cyan)}
+  .hcchip.hc2{border-color:#D9B25A;background:#FBF6E9;color:var(--amber)}
+  .hcchip.hc3{border-color:#E0A5A3;background:#FBEFEE;color:var(--red)}
+  .hclbl{font-size:12.5px;color:var(--dim);line-height:1.4}
+  .pafc figcaption{border-top:1px solid var(--line);padding:16px 0 4px;font-size:13.5px;color:var(--muted);line-height:1.6}
+  .pafc-disc{display:block;margin-top:8px;font-size:12.5px;color:var(--dim)}
+  .navcta{padding:8px 14px;font-size:13px}
+  nav .links a.navcta{color:#fff}
+  nav .links a[aria-current]{color:var(--cyan);font-weight:700}
+  .wallbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:0 0 14px}
+  .wallbar .gov-search{margin:0}
+  .allopen{white-space:nowrap;margin-left:4px;font-size:10.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--green);background:#EDF7F1;border:1px solid #BFE3CF;border-radius:12px;padding:3px 9px}
   /* participate */
   .roles{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 24px}
   .role{background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:13.5px;color:var(--muted);white-space:nowrap}
@@ -228,7 +261,7 @@
   .proc p{color:var(--muted);font-size:14px;margin:0 0 8px}
   .proc strong{color:var(--text)}
   .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:6px}
-  .flow .step{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:6px 12px;font-size:13px;color:var(--text);font-weight:600}
+  .flow .step{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:6px 12px;font-size:13px;color:var(--text);font-weight:600;white-space:nowrap}
   .flow .arrow{color:var(--dim)}
   footer{padding:44px 0 64px;color:var(--dim);font-size:13px;background:var(--bg2);border-top:1px solid var(--line)}
   footer .disc{max-width:860px;margin-top:16px}
@@ -237,18 +270,29 @@
   .sealitem{background:var(--bg1);border:1px solid var(--line);border-radius:8px;padding:13px 16px}
   .sealitem .k{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:4px}
   .sealitem .v{color:var(--muted);font-size:13px;line-height:1.5}
-  @media(max-width:900px){.sealrow{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:900px){
+    .sealrow{grid-template-columns:repeat(2,1fr)}
+    .pafc{padding:4px 16px 14px}
+    .pafc-head{display:none}
+    .pafc-head,.prow{grid-template-columns:1fr}
+    .prow{gap:8px;padding:16px 0}
+    .pbar{max-width:340px}
+  }
+  @media(max-width:1100px){.endorser{display:none}nav .links{gap:14px}}
   @media(max-width:540px){.sealrow{grid-template-columns:1fr}}
   @media(max-width:1160px){.stages .arrow{display:none}}
   @media(max-width:1000px){
     .wg,.proc,.scope-cols,.gov-cards,.gov3{grid-template-columns:1fr}
+    .hero-grid{grid-template-columns:1fr;gap:32px}
+    .hero-photo{max-width:460px}
     .road,.steps{grid-template-columns:repeat(2,1fr)}
   }
-  @media(max-width:820px){
+  @media(max-width:880px){
     h1{font-size:38px}
     .gap,.road,.steps{grid-template-columns:1fr}
     nav .links{gap:14px}
-    nav .links a:not(.gh):not(.keep){display:none}
+    nav .links a:not(.navcta){display:none}
+    .navcta{padding:7px 11px;font-size:12px}
     .endorser{display:none}
     .wordmark{font-size:13px;letter-spacing:2px}
     .seats{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));padding:2px 12px 14px}
@@ -293,37 +337,60 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<nav><div class="wrap row">
+<nav aria-label="Site"><div class="wrap row">
   <div class="brand">
-    <svg class="emblem" viewBox="0 0 64 64" width="28" height="28" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"><path d="M32 6 A26 26 0 1 0 58 32"/><line x1="17" y1="41" x2="47" y2="41"/></g><circle cx="49" cy="14" r="5" fill="currentColor"/></svg>
+    <svg class="emblem" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".4"/><path d="M52.5 17.5 A25 25 0 1 0 57 32" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><line x1="34" y1="32" x2="57" y2="32" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="32" r="5" fill="currentColor"/></svg>
     <span class="wordmark">AI GOVERNORS</span>
     <span class="endorser">convened by Cognita GRC</span>
   </div>
   <div class="links">
-    <a class="keep" href="#governors">Governors</a>
-    <a href="/forum">Forum</a>
-    <a href="#areas">Structure</a>
+    <a href="#continuum">Standard</a>
     <a href="#register">Register</a>
     <a class="keep" href="#docs">Documents</a>
+    <a href="#governors">Governors</a>
     <a href="#participate">Participate</a>
-    <a href="#process">Process</a>
     <a class="gh" href="https://github.com/KGEmmanuel/physical-ai-governance" target="_blank" rel="noopener">GitHub ↗</a>
+    <a class="btn btn-primary navcta" href="/governors">Become an AI Governor</a>
   </div>
 </div></nav>
 <main id="main">
 
-<header class="hero"><div class="wrap">
-  <div class="eyebrow">AI Governors · A global community stewarding an open standard · Convened by Cognita GRC</div>
+<header class="hero"><div class="wrap hero-grid">
+  <div>
+  <div class="eyebrow">An open standards community · Convened by Cognita GRC</div>
   <h1>Open standards for AI that can <span class="accent">apply force.</span></h1>
   <p class="lede">When AI gets a body, a hallucination is no longer a wrong answer — it is a physical action. <strong style="color:var(--text)">AI Governors</strong> is the global community stewarding PAIG — an open, vendor-neutral standard for autonomous embodied AI: a Force Continuum, an "ISO&nbsp;42001 for Robotics" (working title), and the API that makes them provable. One community steward per region. Every seat open.</p>
-  <div style="margin-top:18px"><span class="pill status-open">Draft v0.1 · Request for Comment</span> <span class="pill">Open standard · CC BY 4.0 / Apache-2.0</span></div>
+  <div style="margin-top:18px"><span class="pill status-open">Draft v0.1 · Request for Comment</span> <span class="pill">Open standard · CC BY 4.0 / Apache-2.0</span> <span class="pill">Steward: Cognita GRC — not a government body</span></div>
   <div class="hero-cta">
     <a class="btn btn-primary" href="/governors">Become an AI Governor</a>
-    <a class="btn btn-ghost" href="#governors">See the Wall of Governors</a>
     <a class="btn btn-ghost" href="#docs" onclick="showDoc('force')">Read the Force Continuum</a>
   </div>
+  </div>
+  <figure class="hero-photo">
+    <img src="assets/robot.jpg" alt="A general-purpose humanoid robot on display at a technology trade show, its head and torso a mix of white panels and exposed chrome mechanics" width="1100" height="1292" />
+    <figcaption>The class of machine this standard governs — a general-purpose humanoid on a trade-show floor, moving and applying force among people.</figcaption>
+  </figure>
 
-  <div class="scopecard">
+  </div></header>
+
+<div class="latest" role="region" aria-label="Latest updates"><div class="wrap row">
+  <span class="tag">Latest</span>
+  <span class="item"><strong>July 13, 2026</strong> — <a href="/forum">the Forum's proposed operating model</a> published (PAIG-4): Chapters × Chambers, no pay-to-play — <a href="https://github.com/KGEmmanuel/physical-ai-governance/issues/3" target="_blank" rel="noopener">open for comment ↗</a></span>
+  <span class="item"><strong>July 13, 2026</strong> — the AI Governors community launches: one steward seat per region, <a href="#governors">every seat open</a></span>
+  <span class="item"><strong>July 13, 2026</strong> — PAIG-1 RFC comment thread opened: <a href="https://github.com/KGEmmanuel/physical-ai-governance/issues/1" target="_blank" rel="noopener">issue #1 ↗</a></span>
+</div></div>
+
+<section id="why"><div class="wrap">
+  <div class="kicker">01 · Why this exists</div>
+  <h2>The gap</h2>
+  <p class="sub">Real, current standards cover parts of the problem — and stop exactly where autonomous humanoids begin.</p>
+  <div class="gap">
+    <div class="card"><h3 class="big">ISO 10218:2025 · ISO 13482</h3><p>Govern industrial, collaborative, and gentle service robots — force limits, safety-rated stops. They assume defined tasks, not open-world autonomy taking real-time commands.</p></div>
+    <div class="card"><h3 class="big">EU Machinery Reg. 2023/1230 · EU AI Act</h3><p>From 2027, add AI &amp; self-evolving-behaviour review and human oversight. A conformity regime — not a graduated force-authorization scale.</p></div>
+    <div class="card"><h3 class="big">What's missing</h3><p>How much force a machine may apply and how much human control it requires — <strong>and a universal, provable way to answer, after an incident, what it was told, what it decided, and who was accountable.</strong></p></div>
+  </div>
+
+<div class="scopecard">
     <div class="label">Committee scope</div>
     <p><strong>Standardization of the governance of autonomous embodied AI</strong> — humanoids, general-purpose mobile manipulators, and any AI system that can move and apply force among people: how much force such a system may be authorized to apply, how much human control that force requires, the management system and technical controls that make the coupling real, and the vendor-neutral interface that makes it enforceable and provable after the fact.</p>
     <div class="scope-cols">
@@ -341,26 +408,198 @@
       </ul></div>
     </div>
   </div>
-</div></header>
+</div></section>
 
-<div class="latest" role="region" aria-label="Latest updates"><div class="wrap row">
-  <span class="tag">Latest</span>
-  <span class="item"><strong>July 13, 2026</strong> — <a href="/forum">the Forum's proposed operating model</a> published (PAIG-4): Chapters × Chambers, no pay-to-play — <a href="https://github.com/KGEmmanuel/physical-ai-governance/issues/3" target="_blank" rel="noopener">open for comment ↗</a></span>
-  <span class="item"><strong>July 13, 2026</strong> — the AI Governors community launches: one steward seat per region, <a href="#governors">every seat open</a></span>
-  <span class="item"><strong>July 13, 2026</strong> — PAIG-1 RFC comment thread opened: <a href="https://github.com/KGEmmanuel/physical-ai-governance/issues/1" target="_blank" rel="noopener">issue #1 ↗</a></span>
-</div></div>
+<section id="continuum"><div class="wrap">
+  <div class="kicker">02 · The standard</div>
+  <h2>The Force Continuum, at a glance</h2>
+  <p class="sub">The core of PAIG-1: six graduated force levels, each hard-coupled to a minimum tier of human control — enforced in the machine, not in a policy PDF. The higher the authorized force, the more direct the human control it requires. <strong style="color:var(--text)">Lethal force is never an autonomous decision.</strong></p>
+  <figure class="pafc" aria-label="The Physical AI Force Continuum — force levels PAFC-0 to PAFC-5 and the minimum human-control tier each requires">
+    <div class="pafc-head" aria-hidden="true"><span>Level</span><span>Capability authorized</span><span>Authorized force →</span><span>Minimum human control</span></div>
+    <div class="prow">
+      <div class="plvl">PAFC-0</div>
+      <div class="pname"><strong>Presence</strong><span>Observe, occupy space, navigate passively. No interaction intended.</span></div>
+      <div class="pbar"><i style="width:8%;background:#B9CFE8"></i></div>
+      <div class="phc"><span class="hcchip">HC-0</span><span class="hclbl">Autonomous</span></div>
+    </div>
+    <div class="prow">
+      <div class="plvl">PAFC-1</div>
+      <div class="pname"><strong>Signal</strong><span>Communicate — speech, light, gesture; request compliance.</span></div>
+      <div class="pbar"><i style="width:17%;background:#9DBCDF"></i></div>
+      <div class="phc"><span class="hcchip">HC-0</span><span class="hclbl">Autonomous, logged</span></div>
+    </div>
+    <div class="prow">
+      <div class="plvl">PAFC-2</div>
+      <div class="pname"><strong>Position</strong><span>Block, follow, guide by position — no intentional contact.</span></div>
+      <div class="pbar"><i style="width:30%;background:#78A3D2"></i></div>
+      <div class="phc"><span class="hcchip hc1">HC-1</span><span class="hclbl">Supervised — human on the loop</span></div>
+    </div>
+    <div class="prow">
+      <div class="plvl">PAFC-3</div>
+      <div class="pname"><strong>Contact, limited</strong><span>Intentional contact — guide, support, gently restrain. Hard-capped at ISO 10218-2 body-part limits; reversible.</span></div>
+      <div class="pbar"><i style="width:47%;background:#4C82BE"></i></div>
+      <div class="phc"><span class="hcchip hc1">HC-1→2</span><span class="hclbl">Supervised → authorized</span></div>
+    </div>
+    <div class="prow">
+      <div class="plvl">PAFC-4</div>
+      <div class="pname"><strong>Less-than-lethal force</strong><span>Force to stop or incapacitate — bounded, non-lethal by design.</span></div>
+      <div class="pbar"><i style="width:70%;background:#C08A1E"></i></div>
+      <div class="phc"><span class="hcchip hc2">HC-2</span><span class="hclbl">A human authorizes each specific action</span></div>
+    </div>
+    <div class="prow">
+      <div class="plvl">PAFC-5</div>
+      <div class="pname"><strong>Lethal force</strong><span>Capable of causing death.</span></div>
+      <div class="pbar"><i style="width:100%;background:repeating-linear-gradient(-45deg,#B4231F 0 8px,#8F1B18 8px 16px)"></i></div>
+      <div class="phc"><span class="hcchip hc3">HC-3 only</span><span class="hclbl"><strong style="color:var(--red)">Never an autonomous decision</strong> — direct human control, or prohibited</span></div>
+    </div>
+    <figcaption><strong style="color:var(--text)">The Force–Control Coupling (rule R1):</strong> a system may operate at a force level only when the required human-control tier is present and verified — force is never decoupled from an accountable human. On fault, uncertainty, or loss of control, it fails down to a safety-rated stop (R2). <span class="pafc-disc">Draft v0.1 · open for comment · complements ISO 10218:2025, ISO 13482 &amp; the EU Machinery Regulation 2023/1230 — it does not replace them.</span></figcaption>
+  </figure>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px">
+    <a class="btn btn-ghost" href="#docs" onclick="showDoc('force')">Read PAIG-1 in full</a>
+    <a class="btn btn-ghost" href="https://github.com/KGEmmanuel/physical-ai-governance/issues/1" target="_blank" rel="noopener">Comment on RFC #1 ↗</a>
+  </div>
+</div></section>
 
-<section id="why"><div class="wrap">
-  <h2>The gap</h2>
-  <p class="sub">Real, current standards cover parts of the problem — and stop exactly where autonomous humanoids begin.</p>
-  <div class="gap">
-    <div class="card"><h3 class="big">ISO 10218:2025 · ISO 13482</h3><p>Govern industrial, collaborative, and gentle service robots — force limits, safety-rated stops. They assume defined tasks, not open-world autonomy taking real-time commands.</p></div>
-    <div class="card"><h3 class="big">EU Machinery Reg. 2023/1230 · EU AI Act</h3><p>From 2027, add AI &amp; self-evolving-behaviour review and human oversight. A conformity regime — not a graduated force-authorization scale.</p></div>
-    <div class="card"><h3 class="big">What's missing</h3><p>How much force a machine may apply and how much human control it requires — <strong>and a universal, provable way to answer, after an incident, what it was told, what it decided, and who was accountable.</strong></p></div>
+<section id="areas"><div class="wrap">
+  <div class="kicker">03 · The committee</div>
+  <h2>Working areas</h2>
+  <p class="sub"><strong style="color:var(--text)">Proposed structure, to be ratified at Session 1.</strong> Four working areas on the technical-committee pattern; each maintains a living draft in the document register. Confirmed participants today: 0 — every convenor seat is open, and the first people in are founding members.</p>
+  <div class="wg">
+    <div class="card">
+      <div class="num">WG-1 · CORE</div>
+      <h3 class="title">The Force Continuum (PAFC)</h3>
+      <div class="scope"><strong style="color:var(--text)">Scope:</strong> a graduated force-authorization scale — PAFC-0…5 (Presence → Lethal) — coupled to mandatory human-control tiers and enforced in the machine.</div>
+      <div class="deliv">Deliverable: <button onclick="showDoc('force')">PAIG-1 · Physical AI Force Continuum →</button></div>
+      <div class="meta"><span class="pill status-open">RFC — open for comment</span><span class="lead">Convenor: open</span><button class="open" onclick="showDoc('force')">Open document →</button></div>
+    </div>
+    <div class="card">
+      <div class="num">WG-2 · STANDARD</div>
+      <h3 class="title">Embodied AI Governance ("ISO 42001 for Robotics")</h3>
+      <div class="scope"><strong style="color:var(--text)">Scope:</strong> a management system + six mandatory controls — hardware e-stop, certified force limits, verifiable audit logs, digital identity, continuous monitoring, human accountability.</div>
+      <div class="deliv">Deliverable: <button onclick="showDoc('embodied')">PAIG-2 · Embodied AI Governance Standard →</button></div>
+      <div class="meta"><span class="pill status-draft">Working Draft</span><span class="lead">Convenor: open</span><button class="open" onclick="showDoc('embodied')">Open document →</button></div>
+    </div>
+    <div class="card">
+      <div class="num">WG-3 · INTEROP</div>
+      <h3 class="title">Physical AI Governance API</h3>
+      <div class="scope"><strong style="color:var(--text)">Scope:</strong> the vendor-neutral interface that makes the standards enforceable — identity &amp; attestation, force-level authorization, tamper-evident logs + offline verification, monitoring, accountability.</div>
+      <div class="deliv">Deliverable: <button onclick="showDoc('api')">PAIG-3 · Physical AI Governance API →</button></div>
+      <div class="meta"><span class="pill status-draft">Working Draft</span><span class="lead">Convenor: open</span><button class="open" onclick="showDoc('api')">Open document →</button></div>
+    </div>
+    <div class="card">
+      <div class="num">WG-0 · PROCESS</div>
+      <h3 class="title">Working Group &amp; Governance</h3>
+      <div class="scope"><strong style="color:var(--text)">Scope:</strong> who we convene, the rough-consensus decision model, the first-session agenda, and the v0.1 → v1.0 roadmap.</div>
+      <div class="deliv">Deliverable: <button onclick="showDoc('governance')">PAIG-0 · Working Group &amp; Governance →</button></div>
+      <div class="meta"><span class="pill status-forming">Forming</span><span class="lead">Convenor: Cognita GRC (steward, not owner)</span><button class="open" onclick="showDoc('governance')">Open document →</button></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="register"><div class="wrap">
+  <div class="kicker">04 · The record</div>
+  <h2>Document register</h2>
+  <p class="sub">Deliverables under development. Every document is an open draft — versioned in the repository, free to read, comment on, and implement.</p>
+  <div class="register" tabindex="0" role="region" aria-label="Document register (scrollable table)">
+  <table class="reg">
+    <thead><tr><th scope="col">Doc ID</th><th scope="col">Title</th><th scope="col">Working area</th><th scope="col">Stage</th><th scope="col">Version</th><th scope="col">Link</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="docid">PAIG-1</td><td data-label="Title">Physical AI Force Continuum (PAFC)</td><td data-label="Working area">WG-1 · Core</td>
+        <td data-label="Stage"><a class="pill status-open" href="https://github.com/KGEmmanuel/physical-ai-governance/issues/1" target="_blank" rel="noopener">RFC — open for comment ↗</a></td><td data-label="Version">v0.1</td>
+        <td class="doclink" data-label="Links"><button onclick="showDoc('force')">View draft</button> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/issues/1" target="_blank" rel="noopener">Comment on RFC #1 ↗</a> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/force-continuum/FORCE-CONTINUUM.md" target="_blank" rel="noopener">Source ↗</a></td>
+      </tr>
+      <tr>
+        <td class="docid">PAIG-2</td><td data-label="Title">Embodied AI Governance Standard ("ISO 42001 for Robotics")</td><td data-label="Working area">WG-2 · Standard</td>
+        <td data-label="Stage"><span class="pill status-draft">Working Draft</span></td><td data-label="Version">v0.1</td>
+        <td class="doclink" data-label="Links"><button onclick="showDoc('embodied')">View draft</button> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/embodied-ai-standard/EMBODIED-AI-GOVERNANCE.md" target="_blank" rel="noopener">Source ↗</a></td>
+      </tr>
+      <tr>
+        <td class="docid">PAIG-3</td><td data-label="Title">Physical AI Governance API</td><td data-label="Working area">WG-3 · Interop</td>
+        <td data-label="Stage"><span class="pill status-draft">Working Draft</span></td><td data-label="Version">v0.1</td>
+        <td class="doclink" data-label="Links"><button onclick="showDoc('api')">View draft</button> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/api/GOVERNANCE-API.md" target="_blank" rel="noopener">Source ↗</a></td>
+      </tr>
+      <tr>
+        <td class="docid">PAIG-0</td><td data-label="Title">Working Group &amp; Governance</td><td data-label="Working area">WG-0 · Process</td>
+        <td data-label="Stage"><span class="pill status-forming">Forming</span></td><td data-label="Version">v0.1</td>
+        <td class="doclink" data-label="Links"><button onclick="showDoc('governance')">View draft</button> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/GOVERNANCE.md" target="_blank" rel="noopener">Source ↗</a></td>
+      </tr>
+      <tr>
+        <td class="docid">PAIG-4</td><td data-label="Title">Forum Operating Model — Organization &amp; Functioning (proposed)</td><td data-label="Working area">WG-0 · Process</td>
+        <td data-label="Stage"><a class="pill status-open" href="https://github.com/KGEmmanuel/physical-ai-governance/issues/3" target="_blank" rel="noopener">RFC — open for comment ↗</a></td><td data-label="Version">v1 proposal</td>
+        <td class="doclink" data-label="Links"><a href="/forum">View model</a> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/FORUM-OPERATING-MODEL.md" target="_blank" rel="noopener">Source ↗</a></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="stages" aria-label="Stage legend">
+    <span class="s"><strong>Working Draft</strong> — being written in the working area</span>
+    <span class="arrow" aria-hidden="true">→</span>
+    <span class="s"><strong>RFC / Enquiry</strong> — published for public comment (Issue open ≥ 2 weeks)</span>
+    <span class="arrow" aria-hidden="true">→</span>
+    <span class="s"><strong>Ratified</strong> — adopted by working-group consensus, versioned release</span>
+  </div>
+  <p class="stages-note">A plain-language analogue of the ISO stage ladder (WD → CD/DIS → IS). <strong style="color:var(--text)">"Forming"</strong> marks a process document awaiting ratification at the first session. Nothing here is a published ISO standard or a certification — these are community drafts designed to complement ISO 10218:2025, ISO 13482, the EU Machinery Regulation 2023/1230, the EU AI Act, and ISO/IEC 42001.</p>
+</div></section>
+
+<section id="docs"><div class="wrap">
+  <div class="kicker">05 · The drafts</div>
+  <h2>Documents</h2>
+  <p class="sub">The living drafts, in full. Comments and pull requests welcome via the repository.</p>
+  <div class="tabs" role="tablist" aria-label="Working drafts">
+    <button class="tab active" id="tab-force" data-doc="force" role="tab" aria-selected="true" aria-controls="viewer" onclick="showDoc('force')">PAIG-1 · Force Continuum</button>
+    <button class="tab" id="tab-embodied" data-doc="embodied" role="tab" aria-selected="false" aria-controls="viewer" tabindex="-1" onclick="showDoc('embodied')">PAIG-2 · Embodied AI Standard</button>
+    <button class="tab" id="tab-api" data-doc="api" role="tab" aria-selected="false" aria-controls="viewer" tabindex="-1" onclick="showDoc('api')">PAIG-3 · Governance API</button>
+    <button class="tab" id="tab-governance" data-doc="governance" role="tab" aria-selected="false" aria-controls="viewer" tabindex="-1" onclick="showDoc('governance')">PAIG-0 · Working Group</button>
+  </div>
+  <noscript>
+    <p class="sub">This viewer needs JavaScript. The drafts are equally readable at the source:
+      <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/force-continuum/FORCE-CONTINUUM.md">PAIG-1 · Force Continuum</a> ·
+      <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/embodied-ai-standard/EMBODIED-AI-GOVERNANCE.md">PAIG-2 · Embodied AI Standard</a> ·
+      <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/api/GOVERNANCE-API.md">PAIG-3 · Governance API</a> ·
+      <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/GOVERNANCE.md">PAIG-0 · Working Group &amp; Governance</a>
+    </p>
+  </noscript>
+  <div class="viewer md" id="viewer" role="tabpanel" aria-labelledby="tab-force" tabindex="-1">Loading…</div>
+</div></section>
+
+<section id="process" class="band"><div class="wrap">
+  <div class="kicker">06 · How decisions are made</div>
+  <h2>Process &amp; meetings</h2>
+  <p class="sub">How the committee decides — rough consensus, evidence over opinion, public-safety first. The full process document is PAIG-0, to be ratified at the first session. As the community grows, the proposed shape of the full body — regional Chapters × value-chain Chambers, functional committees, an open cadence, and structural anti-capture — is <a href="/forum">the Forum operating model (PAIG-4)</a>, open for comment now.</p>
+  <div class="proc">
+    <div class="card">
+      <div class="h">Decision flow</div>
+      <div class="flow">
+        <span class="step">Draft</span><span class="arrow" aria-hidden="true">→</span>
+        <span class="step">RFC (Issue open ≥ 2 weeks)</span><span class="arrow" aria-hidden="true">→</span>
+        <span class="step">Working-group review</span><span class="arrow" aria-hidden="true">→</span>
+        <span class="step">Merge on consensus</span><span class="arrow" aria-hidden="true">→</span>
+        <span class="step">Versioned release</span>
+      </div>
+      <p style="margin-top:12px">Material safety decisions require sign-off from <strong>≥ 2 functional-safety</strong> and <strong>≥ 1 regulatory</strong> participant. Substantive changes arrive as pull requests with a linked Issue + rationale.</p>
+    </div>
+    <div class="card">
+      <div class="h">First session — proposed agenda</div>
+      <ol>
+        <li>Ratify scope + principles.</li>
+        <li><strong>Force Continuum v0.1 (PAIG-1)</strong> — adopt/refine the PAFC levels + Force–Control Coupling as the first RFC.</li>
+        <li>Assign leads per document.</li>
+        <li>Decide the conformance/attestation model (self vs. third-party) and the minimal audit-log schema.</li>
+        <li>Set cadence + the v0.2 milestone.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="road">
+    <div class="card"><div class="v">v0.1 — now</div><p>Drafts published; call for participants.</p></div>
+    <div class="card"><div class="v">v0.2</div><p>Force Continuum RFC ratified; minimal audit-log schema; reference OpenAPI spec.</p></div>
+    <div class="card"><div class="v">v0.3</div><p>Pilot with ≥1 robotics vendor; map to EU MR 2023/1230 + EU AI Act.</p></div>
+    <div class="card"><div class="v">v1.0</div><p>Citable standard + open reference implementation.</p></div>
   </div>
 </div></section>
 
 <section id="governors"><div class="wrap">
+  <div class="kicker">07 · The community</div>
   <h2>Become the AI Governor of your region</h2>
   <p class="sub">A standard for machines that move among people only works if someone, somewhere near the deployment, keeps it honest, current, and moving. Not a company. A person. The <strong style="color:var(--text)">AI Governor</strong> is that person for a region — the named steward and advocate of this open standard where they live and work.</p>
   <p class="sub">One region, one Governor. It mirrors how international standards have always worked: ISO doesn't write from a single office — it convenes one national body per country, each bringing its own regulations, incidents, and reality to the table. AI Governors applies that pattern to Physical AI, at the granularity the problem demands: every US state, every Canadian province and territory, every EU member, every country worldwide. <a href="/governors">Read the full designation model →</a></p>
@@ -442,114 +681,18 @@
     <span class="s"><strong>Seat reopened</strong> — a former Governor went inactive; shown plainly, never hidden</span>
     <span class="s">Full model: <a href="/governors">how seats are granted, kept, and reopened →</a></span>
   </div>
-  <input class="gov-search" id="gov-search" type="search" placeholder="Find your region…" aria-label="Search regions" />
+  <div class="wallbar">
+    <input class="gov-search" id="gov-search" type="search" placeholder="Find your region…" aria-label="Search regions" />
+    <button class="btn btn-ghost" id="wall-toggle" type="button" aria-expanded="false">Expand all regions</button>
+  </div>
   <div id="roster"></div>
   <p id="roster-empty" hidden role="status" aria-live="polite" style="color:var(--muted);font-size:14.5px;background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:14px 18px;max-width:640px">No region matches &ldquo;<span id="roster-q"></span>&rdquo; — check the spelling, or <a href="mailto:guillaume@cognitagrc.io?subject=AI%20Governor%3A%20%5Byour%20region%5D">apply by email</a>.</p>
   <noscript><p class="sub">The seat list needs JavaScript to render — apply directly via <a href="https://github.com/KGEmmanuel/physical-ai-governance/issues/new?template=ai-governor.yml">GitHub</a> or email.</p></noscript>
   <p class="rosternote">Every seat above is genuinely open — <strong style="color:var(--text)">no fabricated names, no inflated counts, no honorary fills, no "coming soon" placeholders standing in for people.</strong> If the wall says open, it is open. If it shows a name, that person applied, was confirmed, and is doing the work; the moment they aren't, the seat says so. Designations are announced in the Latest strip and credited in the repository when confirmed. This wall is a record, not a marketing surface — and it is the first thing we'd point a skeptic to.</p>
 </div></section>
 
-<section id="areas"><div class="wrap">
-  <h2>Structure — working areas</h2>
-  <p class="sub"><strong style="color:var(--text)">Proposed structure, to be ratified at Session 1.</strong> Four working areas on the technical-committee pattern; each maintains a living draft in the document register. Confirmed participants today: 0 — every convenor seat is open, and the first people in are founding members.</p>
-  <div class="wg">
-    <div class="card">
-      <div class="num">WG-1 · CORE</div>
-      <h3 class="title">The Force Continuum (PAFC)</h3>
-      <div class="scope"><strong style="color:var(--text)">Scope:</strong> a graduated force-authorization scale — PAFC-0…5 (Presence → Lethal) — coupled to mandatory human-control tiers and enforced in the machine.</div>
-      <div class="deliv">Deliverable: <button onclick="showDoc('force')">PAIG-1 · Physical AI Force Continuum →</button></div>
-      <div class="meta"><span class="pill status-open">RFC — open for comment</span><span class="lead">Convenor: open</span><button class="open" onclick="showDoc('force')">Open document →</button></div>
-    </div>
-    <div class="card">
-      <div class="num">WG-2 · STANDARD</div>
-      <h3 class="title">Embodied AI Governance ("ISO 42001 for Robotics")</h3>
-      <div class="scope"><strong style="color:var(--text)">Scope:</strong> a management system + six mandatory controls — hardware e-stop, certified force limits, verifiable audit logs, digital identity, continuous monitoring, human accountability.</div>
-      <div class="deliv">Deliverable: <button onclick="showDoc('embodied')">PAIG-2 · Embodied AI Governance Standard →</button></div>
-      <div class="meta"><span class="pill status-draft">Working Draft</span><span class="lead">Convenor: open</span><button class="open" onclick="showDoc('embodied')">Open document →</button></div>
-    </div>
-    <div class="card">
-      <div class="num">WG-3 · INTEROP</div>
-      <h3 class="title">Physical AI Governance API</h3>
-      <div class="scope"><strong style="color:var(--text)">Scope:</strong> the vendor-neutral interface that makes the standards enforceable — identity &amp; attestation, force-level authorization, tamper-evident logs + offline verification, monitoring, accountability.</div>
-      <div class="deliv">Deliverable: <button onclick="showDoc('api')">PAIG-3 · Physical AI Governance API →</button></div>
-      <div class="meta"><span class="pill status-draft">Working Draft</span><span class="lead">Convenor: open</span><button class="open" onclick="showDoc('api')">Open document →</button></div>
-    </div>
-    <div class="card">
-      <div class="num">WG-0 · PROCESS</div>
-      <h3 class="title">Working Group &amp; Governance</h3>
-      <div class="scope"><strong style="color:var(--text)">Scope:</strong> who we convene, the rough-consensus decision model, the first-session agenda, and the v0.1 → v1.0 roadmap.</div>
-      <div class="deliv">Deliverable: <button onclick="showDoc('governance')">PAIG-0 · Working Group &amp; Governance →</button></div>
-      <div class="meta"><span class="pill status-forming">Forming</span><span class="lead">Convenor: Cognita GRC (steward, not owner)</span><button class="open" onclick="showDoc('governance')">Open document →</button></div>
-    </div>
-  </div>
-</div></section>
-
-<section id="register"><div class="wrap">
-  <h2>Document register</h2>
-  <p class="sub">Deliverables under development. Every document is an open draft — versioned in the repository, free to read, comment on, and implement.</p>
-  <div class="register" tabindex="0" role="region" aria-label="Document register (scrollable table)">
-  <table class="reg">
-    <thead><tr><th scope="col">Doc ID</th><th scope="col">Title</th><th scope="col">Working area</th><th scope="col">Stage</th><th scope="col">Version</th><th scope="col">Link</th></tr></thead>
-    <tbody>
-      <tr>
-        <td class="docid">PAIG-1</td><td data-label="Title">Physical AI Force Continuum (PAFC)</td><td data-label="Working area">WG-1 · Core</td>
-        <td data-label="Stage"><a class="pill status-open" href="https://github.com/KGEmmanuel/physical-ai-governance/issues/1" target="_blank" rel="noopener">RFC — open for comment ↗</a></td><td data-label="Version">v0.1</td>
-        <td class="doclink" data-label="Links"><button onclick="showDoc('force')">View draft</button> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/issues/1" target="_blank" rel="noopener">Comment on RFC #1 ↗</a> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/force-continuum/FORCE-CONTINUUM.md" target="_blank" rel="noopener">Source ↗</a></td>
-      </tr>
-      <tr>
-        <td class="docid">PAIG-2</td><td data-label="Title">Embodied AI Governance Standard ("ISO 42001 for Robotics")</td><td data-label="Working area">WG-2 · Standard</td>
-        <td data-label="Stage"><span class="pill status-draft">Working Draft</span></td><td data-label="Version">v0.1</td>
-        <td class="doclink" data-label="Links"><button onclick="showDoc('embodied')">View draft</button> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/embodied-ai-standard/EMBODIED-AI-GOVERNANCE.md" target="_blank" rel="noopener">Source ↗</a></td>
-      </tr>
-      <tr>
-        <td class="docid">PAIG-3</td><td data-label="Title">Physical AI Governance API</td><td data-label="Working area">WG-3 · Interop</td>
-        <td data-label="Stage"><span class="pill status-draft">Working Draft</span></td><td data-label="Version">v0.1</td>
-        <td class="doclink" data-label="Links"><button onclick="showDoc('api')">View draft</button> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/api/GOVERNANCE-API.md" target="_blank" rel="noopener">Source ↗</a></td>
-      </tr>
-      <tr>
-        <td class="docid">PAIG-0</td><td data-label="Title">Working Group &amp; Governance</td><td data-label="Working area">WG-0 · Process</td>
-        <td data-label="Stage"><span class="pill status-forming">Forming</span></td><td data-label="Version">v0.1</td>
-        <td class="doclink" data-label="Links"><button onclick="showDoc('governance')">View draft</button> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/GOVERNANCE.md" target="_blank" rel="noopener">Source ↗</a></td>
-      </tr>
-      <tr>
-        <td class="docid">PAIG-4</td><td data-label="Title">Forum Operating Model — Organization &amp; Functioning (proposed)</td><td data-label="Working area">WG-0 · Process</td>
-        <td data-label="Stage"><a class="pill status-open" href="https://github.com/KGEmmanuel/physical-ai-governance/issues/3" target="_blank" rel="noopener">RFC — open for comment ↗</a></td><td data-label="Version">v1 proposal</td>
-        <td class="doclink" data-label="Links"><a href="/forum">View model</a> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/FORUM-OPERATING-MODEL.md" target="_blank" rel="noopener">Source ↗</a></td>
-      </tr>
-    </tbody>
-  </table>
-  </div>
-  <div class="stages" aria-label="Stage legend">
-    <span class="s"><strong>Working Draft</strong> — being written in the working area</span>
-    <span class="arrow" aria-hidden="true">→</span>
-    <span class="s"><strong>RFC / Enquiry</strong> — published for public comment (Issue open ≥ 2 weeks)</span>
-    <span class="arrow" aria-hidden="true">→</span>
-    <span class="s"><strong>Ratified</strong> — adopted by working-group consensus, versioned release</span>
-  </div>
-  <p class="stages-note">A plain-language analogue of the ISO stage ladder (WD → CD/DIS → IS). <strong style="color:var(--text)">"Forming"</strong> marks a process document awaiting ratification at the first session. Nothing here is a published ISO standard or a certification — these are community drafts designed to complement ISO 10218:2025, ISO 13482, the EU Machinery Regulation 2023/1230, the EU AI Act, and ISO/IEC 42001.</p>
-</div></section>
-
-<section id="docs"><div class="wrap">
-  <h2>Documents</h2>
-  <p class="sub">The living drafts, in full. Comments and pull requests welcome via the repository.</p>
-  <div class="tabs" role="tablist" aria-label="Working drafts">
-    <button class="tab active" id="tab-force" data-doc="force" role="tab" aria-selected="true" aria-controls="viewer" onclick="showDoc('force')">PAIG-1 · Force Continuum</button>
-    <button class="tab" id="tab-embodied" data-doc="embodied" role="tab" aria-selected="false" aria-controls="viewer" tabindex="-1" onclick="showDoc('embodied')">PAIG-2 · Embodied AI Standard</button>
-    <button class="tab" id="tab-api" data-doc="api" role="tab" aria-selected="false" aria-controls="viewer" tabindex="-1" onclick="showDoc('api')">PAIG-3 · Governance API</button>
-    <button class="tab" id="tab-governance" data-doc="governance" role="tab" aria-selected="false" aria-controls="viewer" tabindex="-1" onclick="showDoc('governance')">PAIG-0 · Working Group</button>
-  </div>
-  <noscript>
-    <p class="sub">This viewer needs JavaScript. The drafts are equally readable at the source:
-      <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/force-continuum/FORCE-CONTINUUM.md">PAIG-1 · Force Continuum</a> ·
-      <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/embodied-ai-standard/EMBODIED-AI-GOVERNANCE.md">PAIG-2 · Embodied AI Standard</a> ·
-      <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/api/GOVERNANCE-API.md">PAIG-3 · Governance API</a> ·
-      <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/GOVERNANCE.md">PAIG-0 · Working Group &amp; Governance</a>
-    </p>
-  </noscript>
-  <div class="viewer md" id="viewer" role="tabpanel" aria-labelledby="tab-force" tabindex="-1">Loading…</div>
-</div></section>
-
-<section id="participate"><div class="wrap">
+<section id="participate" class="band"><div class="wrap">
+  <div class="kicker">08 · Join</div>
   <h2>Participation &amp; membership</h2>
   <p class="sub">An open committee: participation is free and the process is public. Cognita GRC is the steward, not the owner — the standard text is CC BY 4.0 and the API specification is Apache-2.0. We're forming the working group now to take v0.1 to a citable standard.</p>
   <div class="roles">
@@ -570,45 +713,11 @@
   <p class="steward">Convening steward: <strong>Guillaume Kaldjob</strong> · Cognita GRC · <a href="mailto:guillaume@cognitagrc.io">guillaume@cognitagrc.io</a> — email carries the same standing as a GitHub Issue. How decisions are made: <a href="#process">Process &amp; meetings</a>.</p>
 </div></section>
 
-<section id="process"><div class="wrap">
-  <h2>Process &amp; meetings</h2>
-  <p class="sub">How the committee decides — rough consensus, evidence over opinion, public-safety first. The full process document is PAIG-0, to be ratified at the first session. As the community grows, the proposed shape of the full body — regional Chapters × value-chain Chambers, functional committees, an open cadence, and structural anti-capture — is <a href="/forum">the Forum operating model (PAIG-4)</a>, open for comment now.</p>
-  <div class="proc">
-    <div class="card">
-      <div class="h">Decision flow</div>
-      <div class="flow">
-        <span class="step">Draft</span><span class="arrow" aria-hidden="true">→</span>
-        <span class="step">RFC (Issue open ≥ 2 weeks)</span><span class="arrow" aria-hidden="true">→</span>
-        <span class="step">Working-group review</span><span class="arrow" aria-hidden="true">→</span>
-        <span class="step">Merge on consensus</span><span class="arrow" aria-hidden="true">→</span>
-        <span class="step">Versioned release</span>
-      </div>
-      <p style="margin-top:12px">Material safety decisions require sign-off from <strong>≥ 2 functional-safety</strong> and <strong>≥ 1 regulatory</strong> participant. Substantive changes arrive as pull requests with a linked Issue + rationale.</p>
-    </div>
-    <div class="card">
-      <div class="h">First session — proposed agenda</div>
-      <ol>
-        <li>Ratify scope + principles.</li>
-        <li><strong>Force Continuum v0.1 (PAIG-1)</strong> — adopt/refine the PAFC levels + Force–Control Coupling as the first RFC.</li>
-        <li>Assign leads per document.</li>
-        <li>Decide the conformance/attestation model (self vs. third-party) and the minimal audit-log schema.</li>
-        <li>Set cadence + the v0.2 milestone.</li>
-      </ol>
-    </div>
-  </div>
-  <div class="road">
-    <div class="card"><div class="v">v0.1 — now</div><p>Drafts published; call for participants.</p></div>
-    <div class="card"><div class="v">v0.2</div><p>Force Continuum RFC ratified; minimal audit-log schema; reference OpenAPI spec.</p></div>
-    <div class="card"><div class="v">v0.3</div><p>Pilot with ≥1 robotics vendor; map to EU MR 2023/1230 + EU AI Act.</p></div>
-    <div class="card"><div class="v">v1.0</div><p>Citable standard + open reference implementation.</p></div>
-  </div>
-</div></section>
-
 </main>
 
 <footer><div class="wrap">
   <div class="sealrow">
-    <div class="sealitem"><div class="k">License</div><div class="v">Standard text CC BY 4.0 · API specification Apache-2.0. Free to read, implement, or fork.</div></div>
+    <div class="sealitem"><div class="k">License</div><div class="v">Draft v0.1 · standard text CC BY 4.0 · API specification Apache-2.0. Free to read, implement, or fork.</div></div>
     <div class="sealitem"><div class="k">Steward</div><div class="v">Convened by <strong style="color:var(--text)">Cognita GRC</strong> — steward, not owner. Decisions move to the working group as it seats (PAIG-0).</div></div>
     <div class="sealitem"><div class="k">Open process</div><div class="v"><a href="https://github.com/KGEmmanuel/physical-ai-governance" target="_blank" rel="noopener">Public repository</a> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/issues/1" target="_blank" rel="noopener">RFC open to all</a> · every draft versioned in the open.</div></div>
     <div class="sealitem"><div class="k">Contact · Languages</div><div class="v"><a href="mailto:guillaume@cognitagrc.io">guillaume@cognitagrc.io</a> · English today — French &amp; Spanish are <a href="https://github.com/KGEmmanuel/physical-ai-governance/issues/2" target="_blank" rel="noopener">open translation work</a>, not a menu yet.</div></div>
@@ -945,6 +1054,19 @@ Draft → RFC (Issue open ≥ 2 weeks) → working-group review → merge on con
     if(map[raw]){document.getElementById('docs').scrollIntoView({behavior:'auto',block:'start'});}
     else if(anchorKey){var el=document.getElementById(raw);if(el){el.scrollIntoView({behavior:'auto',block:'start'});}}
     renderRoster();
+    /* scrollspy: aria-current on nav anchors */
+    var navLinks=Array.prototype.slice.call(document.querySelectorAll('nav .links a[href^="#"]'));
+    var spySecs=navLinks.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));}).filter(Boolean);
+    function spy(){
+      var y=window.scrollY+140,best=null;
+      spySecs.forEach(function(s){if(s.offsetTop<=y)best=s;});
+      navLinks.forEach(function(a){
+        if(best&&a.getAttribute('href')==='#'+best.id)a.setAttribute('aria-current','true');
+        else a.removeAttribute('aria-current');
+      });
+    }
+    window.addEventListener('scroll',spy,{passive:true});
+    spy();
   });
 
   /* ---------- Wall of Governors: one seat per region, ALL OPEN at launch ---------- */
@@ -967,8 +1089,8 @@ Draft → RFC (Issue open ≥ 2 weeks) → working-group review → merge on con
     var total=0,html='';
     ROSTER.forEach(function(g,gi){
       total+=g.seats.length;
-      html+='<details class="region"'+(gi===0?' open':'')+'><summary>'+g.group+
-        ' <span class="n">'+g.seats.length+' seats · all open</span><span class="chev" aria-hidden="true">›</span></summary><div class="seats">';
+      html+='<details class="region"'+(gi<2?' open':'')+'><summary>'+g.group+
+        ' <span class="n">'+g.seats.length+' seats</span><span class="allopen">all open</span><span class="chev" aria-hidden="true">›</span></summary><div class="seats">';
       g.seats.forEach(function(s){
         html+='<a class="seat" data-region="'+s.toLowerCase()+'" href="'+seatUrl(s)+'" target="_blank" rel="noopener">'+s+
           '<span class="open">Position open · be the first</span></a>';
@@ -977,6 +1099,13 @@ Draft → RFC (Issue open ≥ 2 weeks) → working-group review → merge on con
     });
     host.innerHTML=html;
     document.getElementById('seat-count').textContent=total+' seats. Every one of them open today.';
+    var tog=document.getElementById('wall-toggle');
+    tog.addEventListener('click',function(){
+      var open=tog.getAttribute('aria-expanded')!=='true';
+      host.querySelectorAll('details.region').forEach(function(d){d.open=open;});
+      tog.setAttribute('aria-expanded',open?'true':'false');
+      tog.textContent=open?'Collapse regions':'Expand all regions';
+    });
     var input=document.getElementById('gov-search');
     input.addEventListener('input',function(){
       var q=input.value.trim().toLowerCase(), visible=0;
