@@ -87,6 +87,19 @@
   .notoffice{border:1px solid var(--amber);border-radius:12px;background:var(--bg2);padding:14px 18px;margin:0 0 24px;max-width:860px}
   .notoffice p{margin:0;color:var(--muted);font-size:14px}
   .notoffice strong{color:var(--amber)}
+  .gov3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:8px 0 28px}
+  .gov3 .card{background:var(--bg1);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+  .gov3 .h{font-size:15px;font-weight:800;margin:0 0 8px;color:var(--text)}
+  .gov3 p{color:var(--muted);font-size:14px;margin:0}
+  .gov3 strong{color:var(--text)}
+  .getblock{background:var(--bg1);border:1px solid var(--line);border-radius:16px;padding:20px 24px;margin:0 0 28px;max-width:920px}
+  .getblock p{color:var(--muted);font-size:14px;margin:0 0 8px}
+  .getblock p:last-child{margin:0}
+  .getblock strong{color:var(--text)}
+  .seatlegend{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 16px}
+  .seatlegend .s{background:var(--bg1);border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-size:12.5px;color:var(--dim)}
+  .seatlegend .s strong{color:var(--muted);font-weight:700}
+  .seatlegend .s.now strong{color:var(--green)}
   .gov-search{width:100%;max-width:420px;padding:10px 18px;border-radius:24px;border:1px solid var(--line);background:var(--bg1);color:var(--text);font-size:14px;font-family:inherit;margin:0 0 14px}
   .gov-search::placeholder{color:var(--dim)}
   .gov-search:focus{outline:2px solid var(--cyan);outline-offset:1px;border-color:var(--cyan)}
@@ -189,7 +202,7 @@
   footer{padding:40px 0 60px;color:var(--dim);font-size:13px}
   footer .disc{max-width:820px;margin-top:10px}
   @media(max-width:1000px){
-    .wg,.proc,.scope-cols,.gov-cards{grid-template-columns:1fr}
+    .wg,.proc,.scope-cols,.gov-cards,.gov3{grid-template-columns:1fr}
     .road,.steps{grid-template-columns:repeat(2,1fr)}
   }
   @media(max-width:820px){
@@ -248,7 +261,8 @@
   <p class="lede">When AI gets a body, a hallucination is no longer a wrong answer — it is a physical action. <strong style="color:var(--text)">AI Governors</strong> is the global community stewarding PAIG — an open, vendor-neutral standard for autonomous embodied AI: a Force Continuum, an "ISO&nbsp;42001 for Robotics" (working title), and the API that makes them provable. One community steward per region. Every seat open.</p>
   <div style="margin-top:18px"><span class="pill status-open">Draft v0.1 · Request for Comment</span> <span class="pill">Open standard · CC BY 4.0 / Apache-2.0</span></div>
   <div class="hero-cta">
-    <a class="btn btn-primary" href="#governors">Become an AI Governor</a>
+    <a class="btn btn-primary" href="/governors">Become an AI Governor</a>
+    <a class="btn btn-ghost" href="#governors">See the Wall of Governors</a>
     <a class="btn btn-ghost" href="#docs" onclick="showDoc('force')">Read the Force Continuum</a>
   </div>
 
@@ -291,40 +305,90 @@
 
 <section id="governors"><div class="wrap">
   <h2>Become the AI Governor of your region</h2>
-  <p class="sub">A standard for machines that move among people only works if every region has a person who keeps it honest, local, and moving. That person is the region's <strong style="color:var(--text)">AI Governor</strong> — the named community steward and advocate of this open standard where you live.</p>
+  <p class="sub">A standard for machines that move among people only works if someone, somewhere near the deployment, keeps it honest, current, and moving. Not a company. A person. The <strong style="color:var(--text)">AI Governor</strong> is that person for a region — the named steward and advocate of this open standard where they live and work.</p>
+  <p class="sub">One region, one Governor. It mirrors how international standards have always worked: ISO doesn't write from a single office — it convenes one national body per country, each bringing its own regulations, incidents, and reality to the table. AI Governors applies that pattern to Physical AI, at the granularity the problem demands: every US state, every Canadian province and territory, every EU member, every country worldwide. <a href="/governors">Read the full designation model →</a></p>
 
   <div class="notoffice">
-    <p><strong>Plain words, because this is a public-safety-adjacent project:</strong> "AI Governor" is a community designation inside this open-standards effort. It is <strong>not a government position, an official title, or a public office</strong>, and it confers no legal or regulatory authority of any kind. It is the standards-community pattern — one named steward per region, like ISO's national member bodies — applied to Physical AI.</p>
+    <p><strong>Read this first.</strong> "AI Governor" is a <strong>community designation</strong> inside an open-standards project. It is <strong>not</strong> a government position, an elected or appointed office, an official title, or a public role of any kind, and it carries <strong>no legal, regulatory, or enforcement authority</strong> whatsoever. It cannot bind anyone, license anyone, or speak for any government. It is the standards-community pattern — one named steward per region — applied to autonomous embodied AI. We are explicit about this because the standard touches public safety and law enforcement, and a designation that <em>sounded</em> official would be a real harm. It is an earned volunteer role in an open community. Nothing more, and — for the people who take it seriously — nothing less.</p>
+  </div>
+
+  <div class="gov3">
+    <div class="card">
+      <h3 class="h">A regional reviewer</h3>
+      <p>You read the drafts before they harden and comment as someone who knows your region — its robotics deployments, its regulators, its incidents. The Force Continuum should not be written only by the people who happened to be in the room first. Your review is the mechanism that keeps it from being provincial.</p>
+    </div>
+    <div class="card">
+      <h3 class="h">A local convener</h3>
+      <p>You put the draft in front of people where you are — a university seminar, a safety-engineering meetup, a regulator's working lunch, a robotics team's internal review. One session per cycle. The standard spreads at the speed of people who care about it locally; you are that speed for your region.</p>
+    </div>
+    <div class="card">
+      <h3 class="h">A named point of contact</h3>
+      <p>You are the person a journalist, a city official, or a robotics company in your region can reach when they ask "who's thinking about this here?" You don't answer <em>for</em> the standard — you point them to the open process and represent your region inside it.</p>
+    </div>
+  </div>
+
+  <h3 style="font-size:22px;margin:34px 0 8px">Earned, not claimed</h3>
+  <p class="sub">The designation is granted, not self-assigned, and it is granted against a real — if light — commitment. This is deliberate. A title anyone can take by filling in a form means nothing to a regulator or a standards body, and this one is meant to mean something. Here is exactly what earns it and exactly what keeps it. <span style="color:var(--dim)">(One cycle = one release cycle of the standard, roughly quarterly.)</span></p>
+
+  <div class="gov3">
+    <div class="card">
+      <h3 class="h">1 · Review one draft per cycle</h3>
+      <p>Substantive, on-the-record comments on the open RFC — not a thumbs-up. "This conflicts with our regional machinery rule," "PAFC-3 needs a carve-out for care robots," "the audit-log schema won't survive our data-protection regime." The kind of comment that changes a line.</p>
+    </div>
+    <div class="card">
+      <h3 class="h">2 · Run one local session per cycle</h3>
+      <p>Any format that puts the draft in front of your region and brings something back: a meetup, a seminar, a team review, a call with a local regulator. A paragraph on what you ran and what you heard is the deliverable — that field report is often more valuable than the review.</p>
+    </div>
+    <div class="card">
+      <h3 class="h">3 · Represent your region</h3>
+      <p>Be the channel for your region's context — its regulations, its deployments, its incidents — into the standard, and the channel for the standard back out. This is the part that can't be automated and can't be faked.</p>
+    </div>
   </div>
 
   <div class="gov-cards">
     <div class="card">
-      <div class="h">Earned, not claimed</div>
-      <p>The designation carries a real (light) commitment, reviewed before it's granted:</p>
-      <ul>
-        <li><strong>Review one draft per release cycle</strong> — substantive comments on the open RFC.</li>
-        <li><strong>Run one local session per cycle</strong> — a meetup, a university seminar, a team review; any format that puts the draft in front of your region.</li>
-        <li><strong>Represent your region in the working group</strong> — its regulations, incidents, and deployment reality.</li>
-      </ul>
-      <p style="margin-top:10px">Miss a cycle, life happens — tell us. Vanish, and the seat reopens. The wall below only ever shows people doing the work.</p>
+      <div class="h">How it's granted</div>
+      <p>You apply — a GitHub Issue (<code style="background:var(--bg2);padding:2px 6px;border-radius:5px;font-size:12.5px;color:var(--cyan)">AI Governor: &lt;your region&gt;</code>) or one email to <a href="mailto:guillaume@cognitagrc.io?subject=AI%20Governor%3A%20%5Byour%20region%5D">guillaume@cognitagrc.io</a> — with your region, your background, and one line on why this matters where you are. The working group reviews the application against the commitment. <strong>Expertise helps; consistent presence counts more</strong> — a functional-safety engineer is welcome, but so is a committed local organizer who will actually run the sessions.</p>
+      <p style="margin-top:10px"><strong>We will not overstate the current process.</strong> Until the working group is seated, the convening steward (Cognita GRC) confirms designations directly, and the site says so on the record. As the working group forms, confirmation moves to it. Every confirmation is announced in the Latest strip and credited in the repository — so the process is auditable from the outside at every stage.</p>
     </div>
     <div class="card">
-      <div class="h">How to become one</div>
-      <ul>
-        <li><strong>1 · Apply</strong> — open a <a href="https://github.com/KGEmmanuel/physical-ai-governance/issues/new?template=ai-governor.yml" target="_blank" rel="noopener">GitHub Issue "AI Governor: &lt;your region&gt;"</a> (a short form), or email <a href="mailto:guillaume@cognitagrc.io?subject=AI%20Governor%3A%20%5Byour%20region%5D">guillaume@cognitagrc.io</a>.</li>
-        <li><strong>2 · Review</strong> — the working group reviews the application against the commitment. Expertise helps; consistent presence counts more. Until the working group is seated, the convener confirms designations and says so here.</li>
-        <li><strong>3 · Serve</strong> — you're listed on the wall, credited by name in the documents you help shape, and invited to every session.</li>
-      </ul>
-      <p style="margin-top:10px"><strong>Why now:</strong> every seat on the wall is open. The first cohort are founding Governors of a standard that doesn't exist anywhere else yet.</p>
+      <div class="h">How it's kept — and how it reopens</div>
+      <p>The seat is a rolling commitment, not a lifetime title. Meet the commitment across a cycle and you keep it. <strong>Miss a cycle because life happened — tell us, and it holds.</strong> Go silent, and the seat reopens, publicly, on the wall. This is the honest part: the Wall of Governors only ever shows people currently doing the work. A wall of names who signed up once and vanished would be worth nothing, and would quietly discredit everyone still on it.</p>
     </div>
   </div>
 
-  <h3 style="font-size:22px;margin:34px 0 8px">The Wall of Governors</h3>
+  <div class="getblock">
+    <p><strong>What you get</strong> — your name on the wall as your region's Governor. <strong>Credit by name in the documents you shape</strong> — the RFC that becomes a citable standard carries the people who wrote it. A standing invitation to every working session. And the specific standing of a founding Governor: the first cohort shaped the Force Continuum before it hardened, and the record shows it.</p>
+    <p>No payment, no equity, no employment, no exclusivity — it is a volunteer role in an open project. What it offers is authorship of something that doesn't exist anywhere else yet, and a seat at the table where it's decided.</p>
+  </div>
+
+  <h3 style="font-size:22px;margin:34px 0 8px">How to become one</h3>
+  <div class="steps">
+    <div class="card"><div class="n">1 · APPLY</div><p>Open a GitHub Issue — <strong style="color:var(--text)">AI Governor: &lt;your region&gt;</strong> — using the short template, or email <strong style="color:var(--text)">guillaume@cognitagrc.io</strong>. Your region, your background, one line on why it matters where you are. Email carries exactly the same standing as an Issue.</p></div>
+    <div class="card"><div class="n">2 · REVIEW</div><p>The working group reviews your application against the three commitments. Expertise helps; consistent presence counts more. <em>Until the working group is seated, the convening steward confirms designations and says so here</em> — no pretense that a committee exists before it does.</p></div>
+    <div class="card"><div class="n">3 · SERVE</div><p>You're listed on the wall as your region's Governor, credited by name in the documents you help shape, and invited to every session. Your first cycle starts at the next release.</p></div>
+  </div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin:6px 0 8px">
+    <a class="btn btn-primary" href="/governors">Become an AI Governor</a>
+    <a class="btn btn-ghost" href="https://github.com/KGEmmanuel/physical-ai-governance/issues/new?template=ai-governor.yml" target="_blank" rel="noopener">Apply on GitHub ↗</a>
+    <a class="btn btn-ghost" href="mailto:guillaume@cognitagrc.io?subject=AI%20Governor%3A%20%5Byour%20region%5D">Apply by email</a>
+    <a class="btn btn-ghost" href="#docs" onclick="showDoc('force')">Read the Force Continuum first</a>
+  </div>
+
+  <h3 style="font-size:22px;margin:34px 0 8px" id="wall">The Wall of Governors</h3>
   <p class="sub">One seat per region — every US state, every Canadian province and territory, every EU member, every African country, every country worldwide. <strong style="color:var(--text)" id="seat-count"></strong></p>
+  <p class="sub">An empty wall is not a weakness here — it is the most honest thing on this site. This standard is days old and belongs to no one yet. Every seat is a founding seat, and the record will always show who filled it first and whether they're still doing the work.</p>
+  <div class="seatlegend" aria-label="Seat states">
+    <span class="s now"><strong>Position open · be the first</strong> — no Governor yet (every seat, at launch)</span>
+    <span class="s"><strong>Acting Governor</strong> — confirmed by the convening steward while the working group forms</span>
+    <span class="s"><strong>Governor</strong> — confirmed by the seated working group, meeting the commitment</span>
+    <span class="s"><strong>Seat reopened</strong> — a former Governor went inactive; shown plainly, never hidden</span>
+    <span class="s">Full model: <a href="/governors">how seats are granted, kept, and reopened →</a></span>
+  </div>
   <input class="gov-search" id="gov-search" type="search" placeholder="Find your region…" aria-label="Search regions" />
   <div id="roster"></div>
   <noscript><p class="sub">The seat list needs JavaScript to render — apply directly via <a href="https://github.com/KGEmmanuel/physical-ai-governance/issues/new?template=ai-governor.yml">GitHub</a> or email.</p></noscript>
-  <p class="rosternote">Every seat above is genuinely open — no fabricated names, no inflated counts, no honorary fills. If the wall says open, it is open. Designations are announced in the Latest strip and credited in the repository when confirmed.</p>
+  <p class="rosternote">Every seat above is genuinely open — <strong style="color:var(--text)">no fabricated names, no inflated counts, no honorary fills, no "coming soon" placeholders standing in for people.</strong> If the wall says open, it is open. If it shows a name, that person applied, was confirmed, and is doing the work; the moment they aren't, the seat says so. Designations are announced in the Latest strip and credited in the repository when confirmed. This wall is a record, not a marketing surface — and it is the first thing we'd point a skeptic to.</p>
 </div></section>
 
 <section id="areas"><div class="wrap">
@@ -435,7 +499,7 @@
     <div class="card"><div class="n">3 · REVIEW</div><p>Comment on the PAIG-1 RFC — the levels, the coupling rule, the open questions — before v0.2 is cut.</p></div>
   </div>
   <div style="display:flex;gap:12px;flex-wrap:wrap">
-    <a class="btn btn-primary" href="#governors">Become an AI Governor</a>
+    <a class="btn btn-primary" href="/governors">Become an AI Governor</a>
     <a class="btn btn-ghost gh" href="https://github.com/KGEmmanuel/physical-ai-governance/issues/new/choose" target="_blank" rel="noopener">Join on GitHub ↗</a>
     <a class="btn btn-ghost" href="mailto:guillaume@cognitagrc.io?subject=Join%3A%20%5Byour%20role%5D">Join by email</a>
     <a class="btn btn-ghost" href="https://github.com/KGEmmanuel/physical-ai-governance/issues/1" target="_blank" rel="noopener">Comment on the RFC ↗</a>
@@ -843,7 +907,7 @@ Draft → RFC (Issue open ≥ 2 weeks) → working-group review → merge on con
       html+='</div></details>';
     });
     host.innerHTML=html;
-    document.getElementById('seat-count').textContent=total+' seats. All of them open.';
+    document.getElementById('seat-count').textContent=total+' seats. Every one of them open today.';
     var input=document.getElementById('gov-search');
     input.addEventListener('input',function(){
       var q=input.value.trim().toLowerCase();

@@ -31,7 +31,11 @@ http.createServer((req, res) => {
   catch { res.writeHead(400); return res.end("bad request"); }
   let filePath = path.normalize(path.join(ROOT, urlPath));
   if (!filePath.startsWith(ROOT)) { res.writeHead(403); return res.end("forbidden"); }
-  if (urlPath === "/" || !path.extname(filePath)) filePath = path.join(ROOT, "index.html");
+  if (urlPath === "/" || !path.extname(filePath)) {
+    // extensionless routes: /governors -> governors.html if it exists, else the single-page index
+    const htmlPath = filePath.replace(/[\/\\]+$/, "") + ".html";
+    filePath = fs.existsSync(htmlPath) ? htmlPath : path.join(ROOT, "index.html");
+  }
   fs.readFile(filePath, (err, data) => {
     if (err) {
       return fs.readFile(path.join(ROOT, "index.html"), (e2, idx) => {
