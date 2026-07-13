@@ -6,7 +6,7 @@
 <title>AI Governors — a global community stewarding the Physical AI Governance standard</title>
 <meta name="description" content="AI Governors: a global community stewarding PAIG — an open, vendor-neutral standard for autonomous embodied AI (the Force Continuum, an ISO-42001-for-Robotics governance standard, and the API that makes them provable). One community steward per region, every seat open. Convened by Cognita GRC (steward, not owner)." />
 <link rel="canonical" href="https://aigovernors.org/" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23070B16'/%3E%3Cg%3E%3Crect x='8' y='42' width='7' height='12' rx='2' fill='%234FD8FF'/%3E%3Crect x='18' y='36' width='7' height='18' rx='2' fill='%234FD8FF'/%3E%3Crect x='28' y='29' width='7' height='25' rx='2' fill='%233FCB8E'/%3E%3Crect x='38' y='21' width='7' height='33' rx='2' fill='%23F5B547'/%3E%3Crect x='48' y='10' width='7' height='44' rx='2' fill='%23F26E6E'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23FFFFFF'/%3E%3Cg fill='none' stroke='%231F5FA8' stroke-width='4.5' stroke-linecap='round'%3E%3Cpath d='M32 6 A26 26 0 1 0 58 32'/%3E%3Cline x1='17' y1='41' x2='47' y2='41'/%3E%3C/g%3E%3Ccircle cx='49' cy='14' r='5' fill='%231F5FA8'/%3E%3C/svg%3E" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="AI Governors" />
 <meta property="og:title" content="AI Governors — become the AI Governor of your region" />
@@ -15,43 +15,53 @@
 <meta name="twitter:card" content="summary" />
 <style>
   :root{
-    --bg0:#070B16; --bg1:#0E1626; --bg2:#12203A; --line:#24344F;
-    --text:#EAF0FA; --muted:#93A2BC; --dim:#7C8DA9;
-    --blue:#4F7CFF; --cyan:#4FD8FF; --green:#3FCB8E; --amber:#F5B547; --red:#F26E6E;
+    /* Institutional light system. Variable names are kept from the original
+       dark theme so markup and the doc renderer need no changes:
+       bg0=page paper, bg1=panel white, bg2=tinted panel, cyan=anchor blue (links). */
+    --bg0:#FFFFFF; --bg1:#FFFFFF; --bg2:#F2F5FA; --line:#D9E0EB;
+    --text:#0B1B33; --muted:#3D4F6B; --dim:#5A6C85;
+    --blue:#2D6FBF; --cyan:#1F5FA8; --green:#1D7A4F; --amber:#9A6700; --red:#B4231F;
     --font:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --serif:Georgia,'Iowan Old Style','Times New Roman',serif;
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg0);color:var(--text);font-family:var(--font);line-height:1.6;-webkit-font-smoothing:antialiased}
   a{color:var(--cyan);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .btn:hover,.tab:hover,.seat:hover,nav a:hover{text-decoration:none}
   a:focus-visible,button:focus-visible,[tabindex="0"]:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
-  .skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--cyan);color:#06101c;font-weight:700;padding:10px 18px;border-radius:0 0 10px 0}
+  .skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--cyan);color:#fff;font-weight:700;padding:10px 18px;border-radius:0 0 10px 0}
   .skip:focus{left:0}
   .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-  /* nav */
-  nav{position:sticky;top:0;z-index:50;background:rgba(7,11,22,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  nav .row{display:flex;align-items:center;gap:20px;height:64px}
-  .brand{font-weight:800;letter-spacing:.3px;font-size:16px;color:var(--text)}
-  .brand span{color:var(--cyan)}
+  /* nav — emblem + tracked wordmark + steward endorser lockup */
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .row{display:flex;align-items:center;gap:20px;height:68px}
+  .brand{display:flex;align-items:center;gap:11px;color:var(--text)}
+  .brand .emblem{color:var(--cyan);flex:none}
+  .wordmark{font-weight:700;letter-spacing:2.5px;font-size:14.5px}
+  .endorser{color:var(--dim);font-size:11.5px;font-weight:600;letter-spacing:.3px;border-left:1px solid var(--line);padding-left:11px;white-space:nowrap}
   nav .links{margin-left:auto;display:flex;gap:22px;align-items:center;font-size:14px}
   nav .links a{color:var(--muted)} nav .links a:hover{color:var(--text)}
-  .btn{display:inline-block;padding:10px 18px;border-radius:24px;font-weight:700;font-size:14px;cursor:pointer;border:1px solid transparent;white-space:nowrap}
-  .btn-primary{background:var(--cyan);color:#06101c}
+  .btn{display:inline-block;padding:11px 20px;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;border:1px solid transparent;white-space:nowrap}
+  .btn-primary{background:var(--cyan);color:#fff}
+  .btn-primary:hover{background:#174E8C}
   .btn-ghost{border-color:var(--line);color:var(--text);background:transparent}
   .btn-ghost:hover{border-color:var(--cyan)}
-  /* hero */
-  header.hero{padding:72px 0 40px;border-bottom:1px solid var(--line)}
-  .eyebrow{color:var(--cyan);font-weight:700;letter-spacing:3px;font-size:13px;text-transform:uppercase}
-  h1{font-size:52px;line-height:1.05;margin:16px 0 12px;font-weight:800}
+  /* hero — charter register: serif, still, ruled */
+  header.hero{padding:80px 0 48px;border-bottom:1px solid var(--line)}
+  .eyebrow{color:var(--cyan);font-weight:700;letter-spacing:3px;font-size:12.5px;text-transform:uppercase}
+  h1{font-family:var(--serif);font-size:52px;line-height:1.08;margin:18px 0 14px;font-weight:700}
   h1 .accent{color:var(--cyan)}
-  .lede{font-size:21px;color:var(--muted);max-width:760px}
+  .lede{font-size:20px;color:var(--muted);max-width:760px}
   .pill{display:inline-block;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:700;border:1px solid var(--line);color:var(--muted);background:var(--bg2);white-space:nowrap}
-  a.pill:hover{border-color:var(--cyan)}
-  .status-open{color:var(--green);border-color:var(--green)}
-  .status-draft{color:var(--amber);border-color:var(--amber)}
-  .status-forming{color:var(--blue);border-color:var(--blue)}
-  .hero-cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
-  section{padding:56px 0;border-bottom:1px solid var(--line)}
-  h2{font-size:30px;font-weight:800;margin:0 0 8px}
+  a.pill:hover{border-color:var(--cyan);text-decoration:none}
+  .status-open{color:var(--green);border-color:var(--green);background:#EDF7F1}
+  .status-draft{color:var(--amber);border-color:#D9B25A;background:#FBF6E9}
+  .status-forming{color:var(--cyan);border-color:var(--cyan);background:#EDF3FB}
+  .hero-cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+  section{padding:64px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:var(--serif);font-size:31px;font-weight:700;margin:0 0 10px}
+  .secsub{font-family:var(--serif);font-size:23px;font-weight:700;margin:38px 0 10px}
   .sub{color:var(--muted);margin:0 0 28px;max-width:760px}
   /* committee scope card */
   .scopecard{margin-top:30px;background:var(--bg1);border:1px solid var(--line);border-radius:16px;padding:22px 26px;max-width:920px}
@@ -65,7 +75,7 @@
   .scope-cols ul{margin:0;padding-left:18px;color:var(--muted);font-size:13.5px}
   .scope-cols li{margin:3px 0}
   /* latest strip */
-  .latest{padding:18px 0;border-bottom:1px solid var(--line);background:var(--bg1)}
+  .latest{padding:18px 0;border-bottom:1px solid var(--line);background:var(--bg2)}
   .latest .row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
   .latest .tag{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--cyan)}
   .latest .item{color:var(--muted);font-size:13.5px}
@@ -84,9 +94,9 @@
   .gov-cards ul{margin:8px 0 0;padding-left:20px}
   .gov-cards li{margin:6px 0}
   .gov-cards strong{color:var(--text)}
-  .notoffice{border:1px solid var(--amber);border-radius:12px;background:var(--bg2);padding:14px 18px;margin:0 0 24px;max-width:860px}
-  .notoffice p{margin:0;color:var(--muted);font-size:14px}
-  .notoffice strong{color:var(--amber)}
+  .notoffice{border:1px solid #D9A94E;border-left:4px solid #C08A1E;border-radius:8px;background:#FDF8EC;padding:15px 20px;margin:0 0 24px;max-width:860px}
+  .notoffice p{margin:0;color:#4A3B14;font-size:14px}
+  .notoffice strong{color:#8A5F00}
   .gov3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:8px 0 28px}
   .gov3 .card{background:var(--bg1);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
   .gov3 .h{font-size:15px;font-weight:800;margin:0 0 8px;color:var(--text)}
@@ -155,16 +165,16 @@
   .toc .t{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
   .toc ul{margin:0;padding:0;list-style:none;columns:2;column-gap:28px}
   .toc li{margin:3px 0;font-size:13.5px;break-inside:avoid}
-  .md h2{font-size:30px;border:none;margin:26px 0 6px;color:var(--text)}
-  .md h3{font-size:22px;margin:30px 0 8px;color:var(--text)}
-  .md h4{font-size:17px;margin:22px 0 6px;color:var(--cyan)}
+  .md h2{font-family:var(--serif);font-size:30px;border:none;margin:26px 0 6px;color:var(--text)}
+  .md h3{font-family:var(--serif);font-size:22px;margin:30px 0 8px;color:var(--text)}
+  .md h4{font-size:16.5px;margin:22px 0 6px;color:var(--cyan)}
   .md h2 .doc-sub{display:block;font-size:17px;color:var(--muted);font-weight:600;margin-top:4px}
   .md p,.md li{color:var(--muted);font-size:15px}
   .md p,.md li,.md blockquote{max-width:72ch}
   .md strong{color:var(--text)}
-  .md blockquote{border-left:3px solid var(--green);margin:16px 0;padding:2px 16px;color:var(--text);background:var(--bg2);border-radius:0 8px 8px 0}
+  .md blockquote{border-left:3px solid var(--cyan);margin:16px 0;padding:2px 16px;color:var(--text);background:var(--bg2);border-radius:0 8px 8px 0}
   .md code{background:var(--bg2);padding:2px 6px;border-radius:5px;font-size:13.5px;color:var(--cyan)}
-  .md pre{background:#0a1120;border:1px solid var(--line);border-radius:10px;padding:14px;overflow:auto}
+  .md pre{background:#F3F6FA;border:1px solid var(--line);border-radius:8px;padding:14px;overflow:auto}
   .md pre code{background:none;color:var(--muted);font-size:14px}
   .md .tablewrap{overflow-x:auto}
   .md h3 a.anchor,.md h4 a.anchor{color:var(--dim);font-weight:400;text-decoration:none;margin-left:8px;opacity:0;font-size:.8em}
@@ -199,8 +209,15 @@
   .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:6px}
   .flow .step{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:6px 12px;font-size:13px;color:var(--text);font-weight:600}
   .flow .arrow{color:var(--dim)}
-  footer{padding:40px 0 60px;color:var(--dim);font-size:13px}
-  footer .disc{max-width:820px;margin-top:10px}
+  footer{padding:44px 0 64px;color:var(--dim);font-size:13px;background:var(--bg2);border-top:1px solid var(--line)}
+  footer .disc{max-width:860px;margin-top:16px}
+  /* trust furniture — the seal row */
+  .sealrow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:0 0 20px}
+  .sealitem{background:var(--bg1);border:1px solid var(--line);border-radius:8px;padding:13px 16px}
+  .sealitem .k{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:4px}
+  .sealitem .v{color:var(--muted);font-size:13px;line-height:1.5}
+  @media(max-width:900px){.sealrow{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:540px){.sealrow{grid-template-columns:1fr}}
   @media(max-width:1000px){
     .wg,.proc,.scope-cols,.gov-cards,.gov3{grid-template-columns:1fr}
     .road,.steps{grid-template-columns:repeat(2,1fr)}
@@ -210,7 +227,8 @@
     .gap,.road,.steps{grid-template-columns:1fr}
     nav .links{gap:14px}
     nav .links a:not(.gh):not(.keep){display:none}
-    .brand{font-size:14px}
+    .endorser{display:none}
+    .wordmark{font-size:13px;letter-spacing:2px}
     .seats{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));padding:2px 12px 14px}
     .toc ul{columns:1}
     .stages{flex-direction:column;align-items:stretch}
@@ -242,7 +260,11 @@
 <a class="skip" href="#main">Skip to content</a>
 
 <nav><div class="wrap row">
-  <div class="brand">AI <span>Governors</span></div>
+  <div class="brand">
+    <svg class="emblem" viewBox="0 0 64 64" width="28" height="28" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"><path d="M32 6 A26 26 0 1 0 58 32"/><line x1="17" y1="41" x2="47" y2="41"/></g><circle cx="49" cy="14" r="5" fill="currentColor"/></svg>
+    <span class="wordmark">AI GOVERNORS</span>
+    <span class="endorser">convened by Cognita GRC</span>
+  </div>
   <div class="links">
     <a class="keep" href="#governors">Governors</a>
     <a href="#areas">Structure</a>
@@ -327,7 +349,7 @@
     </div>
   </div>
 
-  <h3 style="font-size:22px;margin:34px 0 8px">Earned, not claimed</h3>
+  <h3 class="secsub">Earned, not claimed</h3>
   <p class="sub">The designation is granted, not self-assigned, and it is granted against a real — if light — commitment. This is deliberate. A title anyone can take by filling in a form means nothing to a regulator or a standards body, and this one is meant to mean something. Here is exactly what earns it and exactly what keeps it. <span style="color:var(--dim)">(One cycle = one release cycle of the standard, roughly quarterly.)</span></p>
 
   <div class="gov3">
@@ -362,7 +384,7 @@
     <p>No payment, no equity, no employment, no exclusivity — it is a volunteer role in an open project. What it offers is authorship of something that doesn't exist anywhere else yet, and a seat at the table where it's decided.</p>
   </div>
 
-  <h3 style="font-size:22px;margin:34px 0 8px">How to become one</h3>
+  <h3 class="secsub">How to become one</h3>
   <div class="steps">
     <div class="card"><div class="n">1 · APPLY</div><p>Open a GitHub Issue — <strong style="color:var(--text)">AI Governor: &lt;your region&gt;</strong> — using the short template, or email <strong style="color:var(--text)">guillaume@cognitagrc.io</strong>. Your region, your background, one line on why it matters where you are. Email carries exactly the same standing as an Issue.</p></div>
     <div class="card"><div class="n">2 · REVIEW</div><p>The working group reviews your application against the three commitments. Expertise helps; consistent presence counts more. <em>Until the working group is seated, the convening steward confirms designations and says so here</em> — no pretense that a committee exists before it does.</p></div>
@@ -375,7 +397,7 @@
     <a class="btn btn-ghost" href="#docs" onclick="showDoc('force')">Read the Force Continuum first</a>
   </div>
 
-  <h3 style="font-size:22px;margin:34px 0 8px" id="wall">The Wall of Governors</h3>
+  <h3 class="secsub" id="wall">The Wall of Governors</h3>
   <p class="sub">One seat per region — every US state, every Canadian province and territory, every EU member, every African country, every country worldwide. <strong style="color:var(--text)" id="seat-count"></strong></p>
   <p class="sub">An empty wall is not a weakness here — it is the most honest thing on this site. This standard is days old and belongs to no one yet. Every seat is a founding seat, and the record will always show who filled it first and whether they're still doing the work.</p>
   <div class="seatlegend" aria-label="Seat states">
@@ -544,7 +566,13 @@
 </main>
 
 <footer><div class="wrap">
-  <div><strong style="color:var(--text)">AI Governors</strong> · aigovernors.org · a global community stewarding the Physical AI Governance standard (PAIG) · convened by <strong style="color:var(--text)">Cognita GRC</strong> — steward, not owner · <a href="https://github.com/KGEmmanuel/physical-ai-governance" target="_blank" rel="noopener">github.com/KGEmmanuel/physical-ai-governance</a> · <a href="mailto:guillaume@cognitagrc.io">guillaume@cognitagrc.io</a> · <a href="https://app.cognitagrc.io" target="_blank" rel="noopener">app.cognitagrc.io</a></div>
+  <div class="sealrow">
+    <div class="sealitem"><div class="k">License</div><div class="v">Standard text CC BY 4.0 · API specification Apache-2.0. Free to read, implement, or fork.</div></div>
+    <div class="sealitem"><div class="k">Steward</div><div class="v">Convened by <strong style="color:var(--text)">Cognita GRC</strong> — steward, not owner. Decisions move to the working group as it seats (PAIG-0).</div></div>
+    <div class="sealitem"><div class="k">Open process</div><div class="v"><a href="https://github.com/KGEmmanuel/physical-ai-governance" target="_blank" rel="noopener">Public repository</a> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/issues/1" target="_blank" rel="noopener">RFC open to all</a> · every draft versioned in the open.</div></div>
+    <div class="sealitem"><div class="k">Contact · Languages</div><div class="v"><a href="mailto:guillaume@cognitagrc.io">guillaume@cognitagrc.io</a> · English today — French &amp; Spanish are <a href="https://github.com/KGEmmanuel/physical-ai-governance/issues/2" target="_blank" rel="noopener">open translation work</a>, not a menu yet.</div></div>
+  </div>
+  <div><strong style="color:var(--text)">AI Governors</strong> · aigovernors.org · a global community stewarding the Physical AI Governance standard (PAIG) · <a href="https://github.com/KGEmmanuel/physical-ai-governance" target="_blank" rel="noopener">github.com/KGEmmanuel/physical-ai-governance</a> · <a href="https://app.cognitagrc.io" target="_blank" rel="noopener">app.cognitagrc.io</a></div>
   <div class="disc">Standard text under CC BY 4.0; API specification under Apache-2.0. This is a draft for public comment — not legal advice, not a certification scheme, and not affiliated with or endorsed by ISO, IEC, or the European Union. It is designed to complement and extend ISO 10218:2025, ISO 13482, the EU Machinery Regulation 2023/1230, the EU AI Act, and ISO/IEC 42001 — not replace them. "AI Governor" is a community steward designation within this project — not a government position, official title, or public office, and it confers no legal or regulatory authority. No participants, endorsements, adoptions, or filled seats are claimed; every seat and convenor role is open.</div>
 </div></footer>
 
