@@ -58,6 +58,10 @@ We're forming an open working group to take this from v0.1 to a citable standard
 - Propose changes via pull request against the relevant draft; substantive changes need an Issue + rationale first.
 - Decisions by the working group; a lightweight consensus model documented in `GOVERNANCE.md` (to be ratified at the first session).
 - **License:** standard text under **CC BY 4.0** (see [`LICENSE`](LICENSE)); the API specification under **Apache-2.0** (see [`api/LICENSE`](api/LICENSE)). Open by design — a public-safety standard must be free to adopt.
-- **Website:** [physicalai.cognitagrc.io](https://physicalai.cognitagrc.io) — the committee site, document register, and embedded drafts (`index.html` in this repo).
+- **Website:** [aigovernors.org](https://aigovernors.org) — the community site, document register, and embedded drafts (`index.html` in this repo). The former address, physicalai.cognitagrc.io, permanently redirects here.
+
+## The AI Governors community
+
+The standard is stewarded by **AI Governors** — a global community with one named steward seat per region (every US state, every Canadian province and territory, every EU member, every African country, every country worldwide), mirroring how ISO works through national member bodies. An **AI Governor** is a community steward/advocate designation — **not a government position, official title, or public office** — earned by a light but real commitment: review one draft per release cycle, run one local session, and represent the region in the working group. **Every seat is open at launch.** Apply with a [GitHub Issue "AI Governor: \<your region\>"](https://github.com/KGEmmanuel/physical-ai-governance/issues/new?template=ai-governor.yml) or by email.
 
 *This is a draft for public comment, not legal advice or a certification. It is designed to complement and extend ISO 10218:2025, ISO 13482, the EU Machinery Regulation 2023/1230, the EU AI Act, and ISO/IEC 42001 — not replace them.*

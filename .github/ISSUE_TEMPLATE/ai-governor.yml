@@ -1,0 +1,43 @@
+name: "Become the AI Governor of your region"
+description: "Apply for your region's steward seat — every seat is open. A community designation, not a government office."
+title: "AI Governor: [your region]"
+labels: ["ai-governor"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **What this is:** the named community steward and advocate of the Physical AI Governance standard for one region — earned by a light but real commitment, reviewed before it's granted. **What it is not:** a government position, official title, or public office; it confers no legal or regulatory authority.
+        Prefer email? guillaume@cognitagrc.io with subject "AI Governor: <region>".
+  - type: input
+    id: region
+    attributes:
+      label: Region
+      description: The US state, Canadian province/territory, or country you're applying to steward. (Put it in the issue title too.)
+      placeholder: "e.g. Bavaria is not a seat — Germany is; Texas is; Ontario is; Kenya is"
+    validations:
+      required: true
+  - type: input
+    id: background
+    attributes:
+      label: One line on your background
+      placeholder: "e.g. robotics PhD student in Nairobi; safety engineer at an AMR vendor; policy analyst"
+    validations:
+      required: true
+  - type: checkboxes
+    id: commitment
+    attributes:
+      label: The commitment (light, but real — this is what earns the seat)
+      options:
+        - label: "Review one working draft per release cycle (substantive comments on the open RFC)"
+          required: true
+        - label: "Run one local session per cycle — meetup, seminar, team review, any format"
+          required: true
+        - label: "Represent my region's perspective (regulations, incidents, deployment reality) in the working group"
+          required: true
+        - label: "I understand this is a community steward designation, not a government position or official title"
+          required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why you, why your region (optional)
+      placeholder: "What's happening with embodied AI where you live? What would you bring?"
