@@ -3,16 +3,37 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AI Governors — a global community stewarding the Physical AI Governance standard</title>
+<title>AI Governors — stewarding the Physical AI Governance standard</title>
 <meta name="description" content="AI Governors: a global community stewarding PAIG — an open, vendor-neutral standard for autonomous embodied AI (the Force Continuum, an ISO-42001-for-Robotics governance standard, and the API that makes them provable). One community steward per region, every seat open. Convened by Cognita GRC (steward, not owner)." />
 <link rel="canonical" href="https://aigovernors.org/" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23FFFFFF'/%3E%3Cg fill='none' stroke='%231F5FA8' stroke-width='4.5' stroke-linecap='round'%3E%3Cpath d='M32 6 A26 26 0 1 0 58 32'/%3E%3Cline x1='17' y1='41' x2='47' y2='41'/%3E%3C/g%3E%3Ccircle cx='49' cy='14' r='5' fill='%231F5FA8'/%3E%3C/svg%3E" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="AI Governors" />
-<meta property="og:title" content="AI Governors — become the AI Governor of your region" />
-<meta property="og:description" content="A global community stewarding the Physical AI Governance standard (PAIG): the Force Continuum, an 'ISO 42001 for Robotics' (working title), and the Governance API. One community steward per region — every seat open at launch. Draft v0.1, open for comment. CC BY 4.0 / Apache-2.0." />
 <meta property="og:url" content="https://aigovernors.org/" />
-<meta name="twitter:card" content="summary" />
+<meta property="og:title" content="AI Governors — stewarding the Physical AI Governance standard" />
+<meta property="og:description" content="A global community stewarding an open standard for AI that can apply force: a Force Continuum, an ISO-42001-for-Robotics, and the API that makes them provable. One steward per region. Every seat open. Draft v0.1." />
+<meta property="og:image" content="https://aigovernors.org/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="AI Governors — open standards for AI that can apply force. Draft v0.1, convened by Cognita GRC." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AI Governors — stewarding the Physical AI Governance standard" />
+<meta name="twitter:description" content="Open standards for AI that can apply force. One steward per region. Every seat open. Draft v0.1." />
+<meta name="twitter:image" content="https://aigovernors.org/og-card.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AI Governors",
+  "url": "https://aigovernors.org",
+  "logo": "https://aigovernors.org/og-card.png",
+  "image": "https://aigovernors.org/og-card.png",
+  "slogan": "Open standards for AI that can apply force.",
+  "description": "An open, community-stewarded standards effort for the governance of autonomous embodied AI — a Force Continuum, an embodied-AI management standard, and a governance API. A Draft v0.1 open standard, not a certification or a government body; convened and stewarded by Cognita GRC. Complements ISO 10218:2025, the EU Machinery Regulation 2023/1230, the EU AI Act, and ISO/IEC 42001.",
+  "sameAs": ["https://github.com/KGEmmanuel/physical-ai-governance"],
+  "sponsor": { "@type": "Organization", "name": "Cognita GRC", "url": "https://cognitagrc.io" }
+}
+</script>
 <style>
   :root{
     /* Institutional light system. Variable names are kept from the original
@@ -154,7 +175,7 @@
   .stages-note{color:var(--dim);font-size:13px;margin-top:10px;max-width:860px}
   /* documents viewer */
   .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
-  .tab{padding:9px 16px;border-radius:22px;border:1px solid var(--line);background:var(--bg1);color:var(--muted);cursor:pointer;font-size:14px;font-weight:600;font-family:inherit}
+  .tab{display:inline-flex;align-items:center;min-height:44px;padding:9px 16px;border-radius:22px;border:1px solid var(--line);background:var(--bg1);color:var(--muted);cursor:pointer;font-size:14px;font-weight:600;font-family:inherit}
   .tab.active{background:var(--bg2);border-color:var(--cyan);color:var(--cyan)}
   .viewer{background:var(--bg1);border:1px solid var(--line);border-radius:16px;padding:14px 34px 34px}
   /* rendered markdown (doc headings are demoted one level: # → h2, ## → h3, ### → h4,
@@ -218,6 +239,7 @@
   .sealitem .v{color:var(--muted);font-size:13px;line-height:1.5}
   @media(max-width:900px){.sealrow{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:540px){.sealrow{grid-template-columns:1fr}}
+  @media(max-width:1160px){.stages .arrow{display:none}}
   @media(max-width:1000px){
     .wg,.proc,.scope-cols,.gov-cards,.gov3{grid-template-columns:1fr}
     .road,.steps{grid-template-columns:repeat(2,1fr)}
@@ -234,6 +256,18 @@
     .stages{flex-direction:column;align-items:stretch}
     .stages .arrow{display:none}
     .stages .s,.flow .step{white-space:normal}
+  }
+  @media print{
+    nav,.skip,.latest,.hero-cta,.gov-search,.tabs,.btn,#roster-empty,button.open,.wg .deliv button{display:none!important}
+    body{background:#fff;color:#000}
+    section,header.hero,.latest{border:none;padding:20px 0}
+    a{color:#000;text-decoration:underline}
+    #viewer a[href^="http"]::after,.proc a[href^="http"]::after,.sealitem a[href^="http"]::after{content:" (" attr(href) ")";font-size:.85em;color:#333}
+    .anchor{display:none!important}
+    h1,h2,h3,h4{break-after:avoid}
+    .wg .card,.gap .card,.proc .card,.road .card,.steps .card,.gov-cards .card,.gov3 .card,.sealitem,details.region,.md .tablewrap tr{break-inside:avoid}
+    .viewer{padding:0;border:none}
+    footer{background:#fff;border-top:1px solid #bbb}
   }
   @media(max-width:700px){
     /* register table → stacked cards */
@@ -409,6 +443,7 @@
   </div>
   <input class="gov-search" id="gov-search" type="search" placeholder="Find your region…" aria-label="Search regions" />
   <div id="roster"></div>
+  <p id="roster-empty" hidden role="status" aria-live="polite" style="color:var(--muted);font-size:14.5px;background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:14px 18px;max-width:640px">No region matches &ldquo;<span id="roster-q"></span>&rdquo; — check the spelling, or <a href="mailto:guillaume@cognitagrc.io?subject=AI%20Governor%3A%20%5Byour%20region%5D">apply by email</a>.</p>
   <noscript><p class="sub">The seat list needs JavaScript to render — apply directly via <a href="https://github.com/KGEmmanuel/physical-ai-governance/issues/new?template=ai-governor.yml">GitHub</a> or email.</p></noscript>
   <p class="rosternote">Every seat above is genuinely open — <strong style="color:var(--text)">no fabricated names, no inflated counts, no honorary fills, no "coming soon" placeholders standing in for people.</strong> If the wall says open, it is open. If it shows a name, that person applied, was confirmed, and is doing the work; the moment they aren't, the seat says so. Designations are announced in the Latest strip and credited in the repository when confirmed. This wall is a record, not a marketing surface — and it is the first thing we'd point a skeptic to.</p>
 </div></section>
@@ -938,19 +973,29 @@ Draft → RFC (Issue open ≥ 2 weeks) → working-group review → merge on con
     document.getElementById('seat-count').textContent=total+' seats. Every one of them open today.';
     var input=document.getElementById('gov-search');
     input.addEventListener('input',function(){
-      var q=input.value.trim().toLowerCase();
+      var q=input.value.trim().toLowerCase(), visible=0;
       host.querySelectorAll('details.region').forEach(function(d){
         var any=false;
         d.querySelectorAll('.seat').forEach(function(s){
           var hit=!q||s.dataset.region.indexOf(q)>=0;
           s.style.display=hit?'':'none';
-          if(hit)any=true;
+          if(hit){any=true;visible++;}
         });
         d.style.display=any?'':'none';
         if(q&&any)d.open=true;
       });
+      var empty=document.getElementById('roster-empty');
+      if(q&&visible===0){document.getElementById('roster-q').textContent=input.value.trim();empty.hidden=false;}
+      else{empty.hidden=true;}
     });
   }
+  /* print: expand every region group so the full wall prints; restore after */
+  window.addEventListener('beforeprint',function(){
+    document.querySelectorAll('details.region').forEach(function(d){d.dataset.wasOpen=d.open?'1':'';d.open=true;});
+  });
+  window.addEventListener('afterprint',function(){
+    document.querySelectorAll('details.region').forEach(function(d){d.open=d.dataset.wasOpen==='1';});
+  });
 </script>
 </body>
 </html>
