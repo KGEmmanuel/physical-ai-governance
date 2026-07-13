@@ -1,0 +1,35 @@
+name: "Comment on a draft"
+description: "A self-contained comment or proposal against PAIG-0…3. (For PAIG-1 quick comments, you can also reply directly on the RFC thread, issue #1.)"
+title: "[PAIG-N §X] <one-line summary>"
+labels: ["rfc-comment"]
+body:
+  - type: dropdown
+    id: doc
+    attributes:
+      label: Document
+      options:
+        - PAIG-1 · Physical AI Force Continuum
+        - PAIG-2 · Embodied AI Governance Standard
+        - PAIG-3 · Physical AI Governance API
+        - PAIG-0 · Working Group & Governance
+    validations:
+      required: true
+  - type: input
+    id: section
+    attributes:
+      label: Section
+      placeholder: "e.g. §3, PAFC-3 row · §4 R2 · Control 3"
+    validations:
+      required: true
+  - type: textarea
+    id: comment
+    attributes:
+      label: Comment
+      description: What is wrong, missing, or risky — evidence over opinion (cite standards, incidents, or data where you can).
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change (optional)
+      description: Concrete replacement text if you have it — proposals move faster than objections.

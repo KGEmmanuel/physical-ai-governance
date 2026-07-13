@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Join or comment by email
+    url: mailto:guillaume@cognitagrc.io
+    about: "No GitHub account, or your organization can't use it? Email the convening steward directly — same standing as an Issue."
+  - name: PAIG-1 RFC comment thread
+    url: https://github.com/KGEmmanuel/physical-ai-governance/issues/1
+    about: The open request-for-comment thread on the Force Continuum v0.1.

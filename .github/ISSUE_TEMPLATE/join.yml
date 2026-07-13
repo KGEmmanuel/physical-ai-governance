@@ -1,0 +1,51 @@
+name: "Join the working group"
+description: "Ask for a seat in the PAIG working group — every convenor seat is open."
+title: "Join: [your role]"
+labels: ["join"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for stepping up. Participation is free and the process is public — see [PAIG-0 · Working Group & Governance](https://github.com/KGEmmanuel/physical-ai-governance/blob/main/GOVERNANCE.md).
+        Prefer email? Write to guillaume@cognitagrc.io instead.
+  - type: dropdown
+    id: role
+    attributes:
+      label: Role / perspective
+      description: Which hat are you wearing? (Pick the closest.)
+      options:
+        - Roboticist
+        - Functional-safety engineer
+        - Standards-body member (ISO/TC 299, IEC, …)
+        - Regulator / policy
+        - Law-enforcement / public-safety
+        - AI-governance
+        - Ethicist
+        - Insurer / liability
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: background
+    attributes:
+      label: One line on your background
+      placeholder: "e.g. 8 years functional safety on collaborative arms; ISO/TC 299 WG3 observer"
+    validations:
+      required: true
+  - type: dropdown
+    id: interest
+    attributes:
+      label: Working area of interest
+      options:
+        - WG-1 · Force Continuum (PAIG-1)
+        - WG-2 · Embodied AI Governance Standard (PAIG-2)
+        - WG-3 · Governance API (PAIG-3)
+        - WG-0 · Process & governance (PAIG-0)
+        - Several / not sure yet
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else (optional)
+      placeholder: "Convenor seat interest, availability, a first comment on the drafts…"

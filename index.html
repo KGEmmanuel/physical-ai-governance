@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>PAIG — Physical AI Governance · Open Technical Committee</title>
 <meta name="description" content="PAIG — Physical AI Governance: an open technical committee (community) drafting vendor-neutral standards for autonomous embodied AI — the Force Continuum, an ISO-42001-for-Robotics governance standard, and the API that makes them provable. Convened by Cognita GRC (steward, not owner)." />
+<link rel="canonical" href="https://physicalai.cognitagrc.io/" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23070B16'/%3E%3Cg%3E%3Crect x='8' y='42' width='7' height='12' rx='2' fill='%234FD8FF'/%3E%3Crect x='18' y='36' width='7' height='18' rx='2' fill='%234FD8FF'/%3E%3Crect x='28' y='29' width='7' height='25' rx='2' fill='%233FCB8E'/%3E%3Crect x='38' y='21' width='7' height='33' rx='2' fill='%23F5B547'/%3E%3Crect x='48' y='10' width='7' height='44' rx='2' fill='%23F26E6E'/%3E%3C/g%3E%3C/svg%3E" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="PAIG — Physical AI Governance" />
+<meta property="og:title" content="PAIG — Physical AI Governance · Open Technical Committee" />
+<meta property="og:description" content="An open technical committee (community) drafting vendor-neutral standards for autonomous embodied AI: the Force Continuum (PAFC), an 'ISO 42001 for Robotics' (working title), and the Governance API. Draft v0.1, open for comment. CC BY 4.0 / Apache-2.0." />
+<meta property="og:url" content="https://physicalai.cognitagrc.io/" />
+<meta name="twitter:card" content="summary" />
 <style>
   :root{
     --bg0:#070B16; --bg1:#0E1626; --bg2:#12203A; --line:#24344F;
@@ -15,7 +23,9 @@
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg0);color:var(--text);font-family:var(--font);line-height:1.6;-webkit-font-smoothing:antialiased}
   a{color:var(--cyan);text-decoration:none}
-  a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+  a:focus-visible,button:focus-visible,[tabindex="0"]:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+  .skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--cyan);color:#06101c;font-weight:700;padding:10px 18px;border-radius:0 0 10px 0}
+  .skip:focus{left:0}
   .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
   /* nav */
   nav{position:sticky;top:0;z-index:50;background:rgba(7,11,22,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -24,7 +34,7 @@
   .brand span{color:var(--cyan)}
   nav .links{margin-left:auto;display:flex;gap:22px;align-items:center;font-size:14px}
   nav .links a{color:var(--muted)} nav .links a:hover{color:var(--text)}
-  .btn{display:inline-block;padding:10px 18px;border-radius:24px;font-weight:700;font-size:14px;cursor:pointer;border:1px solid transparent}
+  .btn{display:inline-block;padding:10px 18px;border-radius:24px;font-weight:700;font-size:14px;cursor:pointer;border:1px solid transparent;white-space:nowrap}
   .btn-primary{background:var(--cyan);color:#06101c}
   .btn-ghost{border-color:var(--line);color:var(--text);background:transparent}
   .btn-ghost:hover{border-color:var(--cyan)}
@@ -32,9 +42,10 @@
   header.hero{padding:72px 0 40px;border-bottom:1px solid var(--line)}
   .eyebrow{color:var(--cyan);font-weight:700;letter-spacing:3px;font-size:13px;text-transform:uppercase}
   h1{font-size:52px;line-height:1.05;margin:16px 0 12px;font-weight:800}
-  h1 .accent{color:var(--green)}
+  h1 .accent{color:var(--cyan)}
   .lede{font-size:21px;color:var(--muted);max-width:760px}
-  .pill{display:inline-block;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:700;border:1px solid var(--line);color:var(--muted);background:var(--bg2)}
+  .pill{display:inline-block;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:700;border:1px solid var(--line);color:var(--muted);background:var(--bg2);white-space:nowrap}
+  a.pill:hover{border-color:var(--cyan)}
   .status-open{color:var(--green);border-color:var(--green)}
   .status-draft{color:var(--amber);border-color:var(--amber)}
   .status-forming{color:var(--blue);border-color:var(--blue)}
@@ -49,8 +60,8 @@
   .scopecard strong{color:var(--text)}
   .scope-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px}
   .scope-cols .col{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
-  .scope-cols .h{font-size:13px;font-weight:800;margin-bottom:6px}
-  .scope-cols .in .h{color:var(--green)} .scope-cols .out .h{color:var(--amber)}
+  .scope-cols .h{font-size:13px;font-weight:800;margin:0 0 6px}
+  .scope-cols .in .h{color:var(--green)} .scope-cols .out .h{color:var(--muted)}
   .scope-cols ul{margin:0;padding-left:18px;color:var(--muted);font-size:13.5px}
   .scope-cols li{margin:3px 0}
   /* latest strip */
@@ -63,14 +74,14 @@
   /* gap strip */
   .gap{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
   .gap .card{background:var(--bg1);border:1px solid var(--line);border-radius:14px;padding:20px}
-  .gap .big{font-size:15px;font-weight:800;color:var(--text);margin-bottom:6px}
+  .gap .big{font-size:15px;font-weight:800;color:var(--text);margin:0 0 6px}
   .gap p{color:var(--muted);font-size:14px;margin:0}
   /* working areas */
   .wg{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
   .wg .card{background:var(--bg1);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:10px;transition:border-color .15s}
   .wg .card:hover{border-color:var(--cyan)}
   .wg .num{font-size:13px;font-weight:800;color:var(--dim);letter-spacing:1px}
-  .wg .title{font-size:20px;font-weight:700}
+  .wg .title{font-size:20px;font-weight:700;margin:0}
   .wg .scope{color:var(--muted);font-size:14.5px;flex:1}
   .wg .deliv{font-size:13px;color:var(--dim)}
   .wg .deliv button{background:none;border:none;padding:0;color:var(--cyan);font-weight:700;font-size:13px;cursor:pointer;font-family:inherit}
@@ -97,17 +108,28 @@
   .tab{padding:9px 16px;border-radius:22px;border:1px solid var(--line);background:var(--bg1);color:var(--muted);cursor:pointer;font-size:14px;font-weight:600;font-family:inherit}
   .tab.active{background:var(--bg2);border-color:var(--cyan);color:var(--cyan)}
   .viewer{background:var(--bg1);border:1px solid var(--line);border-radius:16px;padding:14px 34px 34px}
-  /* rendered markdown */
-  .md h1{font-size:30px;border:none;margin:26px 0 6px}
-  .md h2{font-size:22px;margin:30px 0 8px;color:var(--text)}
-  .md h3{font-size:17px;margin:22px 0 6px;color:var(--cyan)}
+  /* rendered markdown (doc headings are demoted one level: # → h2, ## → h3, ### → h4,
+     so the page keeps a single h1) */
+  .docmeta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;color:var(--dim);font-size:13px;border-bottom:1px solid var(--line);padding:16px 0 12px;margin-bottom:4px}
+  .docmeta .docid{font-weight:800;color:var(--cyan)}
+  .toc{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:18px 0}
+  .toc .t{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
+  .toc ul{margin:0;padding:0;list-style:none;columns:2;column-gap:28px}
+  .toc li{margin:3px 0;font-size:13.5px;break-inside:avoid}
+  .md h2{font-size:30px;border:none;margin:26px 0 6px;color:var(--text)}
+  .md h3{font-size:22px;margin:30px 0 8px;color:var(--text)}
+  .md h4{font-size:17px;margin:22px 0 6px;color:var(--cyan)}
+  .md h2 .doc-sub{display:block;font-size:17px;color:var(--muted);font-weight:600;margin-top:4px}
   .md p,.md li{color:var(--muted);font-size:15px}
+  .md p,.md li,.md blockquote{max-width:72ch}
   .md strong{color:var(--text)}
   .md blockquote{border-left:3px solid var(--green);margin:16px 0;padding:2px 16px;color:var(--text);background:var(--bg2);border-radius:0 8px 8px 0}
-  .md code{background:var(--bg2);padding:2px 6px;border-radius:5px;font-size:13px;color:var(--cyan)}
+  .md code{background:var(--bg2);padding:2px 6px;border-radius:5px;font-size:13.5px;color:var(--cyan)}
   .md pre{background:#0a1120;border:1px solid var(--line);border-radius:10px;padding:14px;overflow:auto}
-  .md pre code{background:none;color:var(--muted);font-size:12.5px}
+  .md pre code{background:none;color:var(--muted);font-size:14px}
   .md .tablewrap{overflow-x:auto}
+  .md h3 a.anchor,.md h4 a.anchor{color:var(--dim);font-weight:400;text-decoration:none;margin-left:8px;opacity:0;font-size:.8em}
+  .md h3:hover a.anchor,.md h4:hover a.anchor,.md a.anchor:focus-visible{opacity:1}
   .md table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13.5px}
   .md th,.md td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
   .md th{background:var(--bg2);color:var(--text);font-weight:700}
@@ -116,7 +138,13 @@
   .md hr{border:none;border-top:1px solid var(--line);margin:24px 0}
   /* participate */
   .roles{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 24px}
-  .role{background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:13.5px;color:var(--muted)}
+  .role{background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:13.5px;color:var(--muted);white-space:nowrap}
+  .steward{color:var(--muted);font-size:14px;margin:18px 0 0}
+  .steward strong{color:var(--text)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:6px 0 24px}
+  .steps .card{background:var(--bg1);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .steps .n{font-weight:800;color:var(--cyan);font-size:13px;letter-spacing:1px}
+  .steps p{color:var(--muted);font-size:13.5px;margin:6px 0 0}
   .road{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
   .road .card{background:var(--bg1);border:1px solid var(--line);border-radius:14px;padding:18px}
   .road .v{font-weight:800;color:var(--cyan);font-size:15px}
@@ -124,7 +152,7 @@
   /* process & meetings */
   .proc{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
   .proc .card{background:var(--bg1);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
-  .proc .h{font-size:16px;font-weight:800;margin-bottom:10px;color:var(--text)}
+  .proc .h{font-size:16px;font-weight:800;margin:0 0 10px;color:var(--text)}
   .proc ol,.proc ul{margin:0;padding-left:20px;color:var(--muted);font-size:14px}
   .proc li{margin:6px 0}
   .proc p{color:var(--muted);font-size:14px;margin:0 0 8px}
@@ -134,27 +162,61 @@
   .flow .arrow{color:var(--dim)}
   footer{padding:40px 0 60px;color:var(--dim);font-size:13px}
   footer .disc{max-width:820px;margin-top:10px}
-  @media(max-width:820px){h1{font-size:38px}.gap,.wg,.road,.proc,.scope-cols{grid-template-columns:1fr}nav .links a:not(.gh){display:none}}
+  @media(max-width:1000px){
+    .wg,.proc,.scope-cols{grid-template-columns:1fr}
+    .road,.steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:820px){
+    h1{font-size:38px}
+    .gap,.road,.steps{grid-template-columns:1fr}
+    nav .links{gap:14px}
+    nav .links a:not(.gh):not(.keep){display:none}
+    .toc ul{columns:1}
+    .stages{flex-direction:column;align-items:stretch}
+    .stages .arrow{display:none}
+    .stages .s,.flow .step{white-space:normal}
+  }
+  @media(max-width:700px){
+    /* register table → stacked cards */
+    table.reg{min-width:0}
+    table.reg thead{position:absolute;left:-9999px}
+    table.reg tr{display:block;border-bottom:1px solid var(--line);padding:14px 16px}
+    table.reg tr:last-child{border-bottom:none}
+    table.reg td{display:block;border:none;padding:3px 0}
+    table.reg td[data-label]::before{content:attr(data-label) ": ";font-weight:700;color:var(--dim);font-size:12px;letter-spacing:.5px;text-transform:uppercase}
+    table.reg td.docid::before{content:none}
+    table.reg .docid{font-size:16px}
+    table.reg .doclink{white-space:normal}
+    /* rendered-doc tables → stacked level cards */
+    .md .tablewrap table,.md .tablewrap tbody{display:block}
+    .md .tablewrap thead{position:absolute;left:-9999px}
+    .md .tablewrap tr{display:block;border:1px solid var(--line);border-radius:10px;margin:10px 0;padding:10px 12px;background:var(--bg2)}
+    .md .tablewrap td{display:block;border:none;padding:3px 0}
+    .md .tablewrap td[data-label]::before{content:attr(data-label) ": ";font-weight:700;color:var(--dim);font-size:12px;letter-spacing:.5px;text-transform:uppercase;display:block}
+    .viewer{padding:14px 18px 24px}
+  }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <nav><div class="wrap row">
   <div class="brand">PAIG · Physical <span>AI</span> Governance</div>
   <div class="links">
     <a href="#areas">Structure</a>
     <a href="#register">Register</a>
-    <a href="#docs">Documents</a>
-    <a href="#participate">Participate</a>
+    <a class="keep" href="#docs">Documents</a>
+    <a class="keep" href="#participate">Participate</a>
     <a href="#process">Process</a>
     <a class="gh" href="https://github.com/KGEmmanuel/physical-ai-governance" target="_blank" rel="noopener">GitHub ↗</a>
   </div>
 </div></nav>
+<main id="main">
 
 <header class="hero"><div class="wrap">
   <div class="eyebrow">PAIG · Open Technical Committee (community) · Convened by Cognita GRC</div>
-  <h1>We must now govern AI that can <span class="accent">apply force.</span></h1>
-  <p class="lede">When AI gets a body, a hallucination is no longer a wrong answer — it is a physical action. PAIG is an open, community technical committee drafting vendor-neutral standards for autonomous embodied AI: a Force Continuum, an "ISO&nbsp;42001 for Robotics," and the API that makes them provable.</p>
+  <h1>Open standards for AI that can <span class="accent">apply force.</span></h1>
+  <p class="lede">When AI gets a body, a hallucination is no longer a wrong answer — it is a physical action. PAIG is an open, community technical committee drafting vendor-neutral standards for autonomous embodied AI: a Force Continuum, an "ISO&nbsp;42001 for Robotics" (working title), and the API that makes them provable.</p>
   <div style="margin-top:18px"><span class="pill status-open">Draft v0.1 · Request for Comment</span> <span class="pill">Open standard · CC BY 4.0 / Apache-2.0</span></div>
   <div class="hero-cta">
     <a class="btn btn-primary" href="#docs" onclick="showDoc('force')">Read the Force Continuum</a>
@@ -183,51 +245,51 @@
 
 <div class="latest" role="region" aria-label="Latest updates"><div class="wrap row">
   <span class="tag">Latest</span>
-  <span class="item"><strong>July 2026</strong> — v0.1 working drafts published (PAIG-0…3)</span>
-  <span class="item"><strong>Open now</strong> — call for participants; the Force Continuum (PAIG-1) is the first RFC</span>
+  <span class="item"><strong>July 13, 2026</strong> — PAIG-1 RFC comment thread opened: <a href="https://github.com/KGEmmanuel/physical-ai-governance/issues/1" target="_blank" rel="noopener">issue #1 ↗</a></span>
+  <span class="item"><strong>July 12, 2026</strong> — v0.1 working drafts published (PAIG-0…3); call for participants open</span>
 </div></div>
 
 <section id="why"><div class="wrap">
   <h2>The gap</h2>
   <p class="sub">Real, current standards cover parts of the problem — and stop exactly where autonomous humanoids begin.</p>
   <div class="gap">
-    <div class="card"><div class="big">ISO 10218:2025 · ISO 13482</div><p>Govern industrial, collaborative, and gentle service robots — force limits, safety-rated stops. They assume defined tasks, not open-world autonomy taking real-time commands.</p></div>
-    <div class="card"><div class="big">EU Machinery Reg. 2023/1230 · EU AI Act</div><p>From 2027, add AI &amp; self-evolving-behaviour review and human oversight. A conformity regime — not a graduated force-authorization scale.</p></div>
-    <div class="card"><div class="big">What's missing</div><p>How much force a machine may apply and how much human control it requires — <strong>and a universal, provable way to answer, after an incident, what it was told, what it decided, and who was accountable.</strong></p></div>
+    <div class="card"><h3 class="big">ISO 10218:2025 · ISO 13482</h3><p>Govern industrial, collaborative, and gentle service robots — force limits, safety-rated stops. They assume defined tasks, not open-world autonomy taking real-time commands.</p></div>
+    <div class="card"><h3 class="big">EU Machinery Reg. 2023/1230 · EU AI Act</h3><p>From 2027, add AI &amp; self-evolving-behaviour review and human oversight. A conformity regime — not a graduated force-authorization scale.</p></div>
+    <div class="card"><h3 class="big">What's missing</h3><p>How much force a machine may apply and how much human control it requires — <strong>and a universal, provable way to answer, after an incident, what it was told, what it decided, and who was accountable.</strong></p></div>
   </div>
 </div></section>
 
 <section id="areas"><div class="wrap">
   <h2>Structure — working areas</h2>
-  <p class="sub">Four working areas, structured like a technical committee. Each maintains a living draft in the document register; every convenor seat is open.</p>
+  <p class="sub"><strong style="color:var(--text)">Proposed structure, to be ratified at Session 1.</strong> Four working areas on the technical-committee pattern; each maintains a living draft in the document register. Confirmed participants today: 0 — every convenor seat is open, and the first people in are founding members.</p>
   <div class="wg">
     <div class="card">
       <div class="num">WG-1 · CORE</div>
-      <div class="title">The Force Continuum (PAFC)</div>
+      <h3 class="title">The Force Continuum (PAFC)</h3>
       <div class="scope"><strong style="color:var(--text)">Scope:</strong> a graduated force-authorization scale — PAFC-0…5 (Presence → Lethal) — coupled to mandatory human-control tiers and enforced in the machine.</div>
       <div class="deliv">Deliverable: <button onclick="showDoc('force')">PAIG-1 · Physical AI Force Continuum →</button></div>
       <div class="meta"><span class="pill status-open">RFC — open for comment</span><span class="lead">Convenor: open</span><button class="open" onclick="showDoc('force')">Open document →</button></div>
     </div>
     <div class="card">
       <div class="num">WG-2 · STANDARD</div>
-      <div class="title">Embodied AI Governance ("ISO 42001 for Robotics")</div>
+      <h3 class="title">Embodied AI Governance ("ISO 42001 for Robotics")</h3>
       <div class="scope"><strong style="color:var(--text)">Scope:</strong> a management system + six mandatory controls — hardware e-stop, certified force limits, verifiable audit logs, digital identity, continuous monitoring, human accountability.</div>
       <div class="deliv">Deliverable: <button onclick="showDoc('embodied')">PAIG-2 · Embodied AI Governance Standard →</button></div>
       <div class="meta"><span class="pill status-draft">Working Draft</span><span class="lead">Convenor: open</span><button class="open" onclick="showDoc('embodied')">Open document →</button></div>
     </div>
     <div class="card">
       <div class="num">WG-3 · INTEROP</div>
-      <div class="title">Physical AI Governance API</div>
+      <h3 class="title">Physical AI Governance API</h3>
       <div class="scope"><strong style="color:var(--text)">Scope:</strong> the vendor-neutral interface that makes the standards enforceable — identity &amp; attestation, force-level authorization, tamper-evident logs + offline verification, monitoring, accountability.</div>
       <div class="deliv">Deliverable: <button onclick="showDoc('api')">PAIG-3 · Physical AI Governance API →</button></div>
       <div class="meta"><span class="pill status-draft">Working Draft</span><span class="lead">Convenor: open</span><button class="open" onclick="showDoc('api')">Open document →</button></div>
     </div>
     <div class="card">
       <div class="num">WG-0 · PROCESS</div>
-      <div class="title">Working Group &amp; Governance</div>
+      <h3 class="title">Working Group &amp; Governance</h3>
       <div class="scope"><strong style="color:var(--text)">Scope:</strong> who we convene, the rough-consensus decision model, the first-session agenda, and the v0.1 → v1.0 roadmap.</div>
       <div class="deliv">Deliverable: <button onclick="showDoc('governance')">PAIG-0 · Working Group &amp; Governance →</button></div>
-      <div class="meta"><span class="pill status-forming">Forming</span><span class="lead">Convener: Cognita GRC (steward, not owner)</span><button class="open" onclick="showDoc('governance')">Open document →</button></div>
+      <div class="meta"><span class="pill status-forming">Forming</span><span class="lead">Convenor: Cognita GRC (steward, not owner)</span><button class="open" onclick="showDoc('governance')">Open document →</button></div>
     </div>
   </div>
 </div></section>
@@ -235,29 +297,29 @@
 <section id="register"><div class="wrap">
   <h2>Document register</h2>
   <p class="sub">Deliverables under development. Every document is an open draft — versioned in the repository, free to read, comment on, and implement.</p>
-  <div class="register">
+  <div class="register" tabindex="0" role="region" aria-label="Document register (scrollable table)">
   <table class="reg">
     <thead><tr><th scope="col">Doc ID</th><th scope="col">Title</th><th scope="col">Working area</th><th scope="col">Stage</th><th scope="col">Version</th><th scope="col">Link</th></tr></thead>
     <tbody>
       <tr>
-        <td class="docid">PAIG-1</td><td>Physical AI Force Continuum (PAFC)</td><td>WG-1 · Core</td>
-        <td><span class="pill status-open">RFC — open for comment</span></td><td>v0.1</td>
-        <td class="doclink"><button onclick="showDoc('force')">View draft</button> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/force-continuum/FORCE-CONTINUUM.md" target="_blank" rel="noopener">Source ↗</a></td>
+        <td class="docid">PAIG-1</td><td data-label="Title">Physical AI Force Continuum (PAFC)</td><td data-label="Working area">WG-1 · Core</td>
+        <td data-label="Stage"><a class="pill status-open" href="https://github.com/KGEmmanuel/physical-ai-governance/issues/1" target="_blank" rel="noopener">RFC — open for comment ↗</a></td><td data-label="Version">v0.1</td>
+        <td class="doclink" data-label="Links"><button onclick="showDoc('force')">View draft</button> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/issues/1" target="_blank" rel="noopener">Comment on RFC #1 ↗</a> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/force-continuum/FORCE-CONTINUUM.md" target="_blank" rel="noopener">Source ↗</a></td>
       </tr>
       <tr>
-        <td class="docid">PAIG-2</td><td>Embodied AI Governance Standard ("ISO 42001 for Robotics")</td><td>WG-2 · Standard</td>
-        <td><span class="pill status-draft">Working Draft</span></td><td>v0.1</td>
-        <td class="doclink"><button onclick="showDoc('embodied')">View draft</button> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/embodied-ai-standard/EMBODIED-AI-GOVERNANCE.md" target="_blank" rel="noopener">Source ↗</a></td>
+        <td class="docid">PAIG-2</td><td data-label="Title">Embodied AI Governance Standard ("ISO 42001 for Robotics")</td><td data-label="Working area">WG-2 · Standard</td>
+        <td data-label="Stage"><span class="pill status-draft">Working Draft</span></td><td data-label="Version">v0.1</td>
+        <td class="doclink" data-label="Links"><button onclick="showDoc('embodied')">View draft</button> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/embodied-ai-standard/EMBODIED-AI-GOVERNANCE.md" target="_blank" rel="noopener">Source ↗</a></td>
       </tr>
       <tr>
-        <td class="docid">PAIG-3</td><td>Physical AI Governance API</td><td>WG-3 · Interop</td>
-        <td><span class="pill status-draft">Working Draft</span></td><td>v0.1</td>
-        <td class="doclink"><button onclick="showDoc('api')">View draft</button> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/api/GOVERNANCE-API.md" target="_blank" rel="noopener">Source ↗</a></td>
+        <td class="docid">PAIG-3</td><td data-label="Title">Physical AI Governance API</td><td data-label="Working area">WG-3 · Interop</td>
+        <td data-label="Stage"><span class="pill status-draft">Working Draft</span></td><td data-label="Version">v0.1</td>
+        <td class="doclink" data-label="Links"><button onclick="showDoc('api')">View draft</button> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/api/GOVERNANCE-API.md" target="_blank" rel="noopener">Source ↗</a></td>
       </tr>
       <tr>
-        <td class="docid">PAIG-0</td><td>Working Group &amp; Governance</td><td>WG-0 · Process</td>
-        <td><span class="pill status-forming">Forming</span></td><td>v0.1</td>
-        <td class="doclink"><button onclick="showDoc('governance')">View draft</button> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/GOVERNANCE.md" target="_blank" rel="noopener">Source ↗</a></td>
+        <td class="docid">PAIG-0</td><td data-label="Title">Working Group &amp; Governance</td><td data-label="Working area">WG-0 · Process</td>
+        <td data-label="Stage"><span class="pill status-forming">Forming</span></td><td data-label="Version">v0.1</td>
+        <td class="doclink" data-label="Links"><button onclick="showDoc('governance')">View draft</button> · <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/GOVERNANCE.md" target="_blank" rel="noopener">Source ↗</a></td>
       </tr>
     </tbody>
   </table>
@@ -276,12 +338,20 @@
   <h2>Documents</h2>
   <p class="sub">The living drafts, in full. Comments and pull requests welcome via the repository.</p>
   <div class="tabs" role="tablist" aria-label="Working drafts">
-    <button class="tab active" data-doc="force" role="tab" aria-selected="true" onclick="showDoc('force')">PAIG-1 · Force Continuum</button>
-    <button class="tab" data-doc="embodied" role="tab" aria-selected="false" onclick="showDoc('embodied')">PAIG-2 · Embodied AI Standard</button>
-    <button class="tab" data-doc="api" role="tab" aria-selected="false" onclick="showDoc('api')">PAIG-3 · Governance API</button>
-    <button class="tab" data-doc="governance" role="tab" aria-selected="false" onclick="showDoc('governance')">PAIG-0 · Working Group</button>
+    <button class="tab active" id="tab-force" data-doc="force" role="tab" aria-selected="true" aria-controls="viewer" onclick="showDoc('force')">PAIG-1 · Force Continuum</button>
+    <button class="tab" id="tab-embodied" data-doc="embodied" role="tab" aria-selected="false" aria-controls="viewer" tabindex="-1" onclick="showDoc('embodied')">PAIG-2 · Embodied AI Standard</button>
+    <button class="tab" id="tab-api" data-doc="api" role="tab" aria-selected="false" aria-controls="viewer" tabindex="-1" onclick="showDoc('api')">PAIG-3 · Governance API</button>
+    <button class="tab" id="tab-governance" data-doc="governance" role="tab" aria-selected="false" aria-controls="viewer" tabindex="-1" onclick="showDoc('governance')">PAIG-0 · Working Group</button>
   </div>
-  <div class="viewer md" id="viewer" role="tabpanel">Loading…</div>
+  <noscript>
+    <p class="sub">This viewer needs JavaScript. The drafts are equally readable at the source:
+      <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/force-continuum/FORCE-CONTINUUM.md">PAIG-1 · Force Continuum</a> ·
+      <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/embodied-ai-standard/EMBODIED-AI-GOVERNANCE.md">PAIG-2 · Embodied AI Standard</a> ·
+      <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/api/GOVERNANCE-API.md">PAIG-3 · Governance API</a> ·
+      <a href="https://github.com/KGEmmanuel/physical-ai-governance/blob/main/GOVERNANCE.md">PAIG-0 · Working Group &amp; Governance</a>
+    </p>
+  </noscript>
+  <div class="viewer md" id="viewer" role="tabpanel" aria-labelledby="tab-force" tabindex="-1">Loading…</div>
 </div></section>
 
 <section id="participate"><div class="wrap">
@@ -290,12 +360,18 @@
   <div class="roles">
     <span class="role">Roboticists</span><span class="role">Functional-safety engineers</span><span class="role">Standards bodies (ISO/TC 299, IEC)</span><span class="role">Regulators</span><span class="role">Law-enforcement &amp; public-safety</span><span class="role">AI-governance leaders</span><span class="role">Ethicists</span><span class="role">Insurers &amp; liability</span>
   </div>
-  <p class="sub"><strong>First deliverable:</strong> ratify the Force Continuum v0.1 (PAIG-1) as an RFC. <strong>How to join:</strong> open a GitHub Issue titled “Join: [your role]” with one line on your background, or contact Cognita GRC.</p>
-  <div style="display:flex;gap:12px;flex-wrap:wrap">
-    <a class="btn btn-primary gh" href="https://github.com/KGEmmanuel/physical-ai-governance/issues/new?title=Join%3A%20%5Byour%20role%5D" target="_blank" rel="noopener">Join on GitHub ↗</a>
-    <a class="btn btn-ghost" href="https://github.com/KGEmmanuel/physical-ai-governance" target="_blank" rel="noopener">Repository ↗</a>
-    <a class="btn btn-ghost" href="https://app.cognitagrc.io" target="_blank" rel="noopener">app.cognitagrc.io</a>
+  <p class="sub"><strong>Why join now:</strong> the first participants shape the Force Continuum before it hardens — convenor seats are open, and contributors are credited by name in the documents they shape.</p>
+  <div class="steps">
+    <div class="card"><div class="n">1 · JOIN</div><p>Open a <em>Join</em> Issue (a two-field form) or send one email — role + one line on your background.</p></div>
+    <div class="card"><div class="n">2 · SESSION 1</div><p>You're invited to the first working session: ratify scope, assign document leads, set cadence.</p></div>
+    <div class="card"><div class="n">3 · REVIEW</div><p>Comment on the PAIG-1 RFC — the levels, the coupling rule, the open questions — before v0.2 is cut.</p></div>
   </div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap">
+    <a class="btn btn-primary gh" href="https://github.com/KGEmmanuel/physical-ai-governance/issues/new/choose" target="_blank" rel="noopener">Join on GitHub ↗</a>
+    <a class="btn btn-ghost" href="mailto:guillaume@cognitagrc.io?subject=Join%3A%20%5Byour%20role%5D">Join by email</a>
+    <a class="btn btn-ghost" href="https://github.com/KGEmmanuel/physical-ai-governance/issues/1" target="_blank" rel="noopener">Comment on the RFC ↗</a>
+  </div>
+  <p class="steward">Convening steward: <strong>Guillaume Kaldjob</strong> · Cognita GRC · <a href="mailto:guillaume@cognitagrc.io">guillaume@cognitagrc.io</a> — email carries the same standing as a GitHub Issue. How decisions are made: <a href="#process">Process &amp; meetings</a>.</p>
 </div></section>
 
 <section id="process"><div class="wrap">
@@ -332,8 +408,10 @@
   </div>
 </div></section>
 
+</main>
+
 <footer><div class="wrap">
-  <div>PAIG · Physical AI Governance · an open technical committee (community) · convened by <strong style="color:var(--text)">Cognita GRC</strong> — steward, not owner · <a href="https://github.com/KGEmmanuel/physical-ai-governance" target="_blank" rel="noopener">github.com/KGEmmanuel/physical-ai-governance</a> · app.cognitagrc.io</div>
+  <div>PAIG · Physical AI Governance · an open technical committee (community) · convened by <strong style="color:var(--text)">Cognita GRC</strong> — steward, not owner · <a href="https://github.com/KGEmmanuel/physical-ai-governance" target="_blank" rel="noopener">github.com/KGEmmanuel/physical-ai-governance</a> · <a href="mailto:guillaume@cognitagrc.io">guillaume@cognitagrc.io</a> · <a href="https://app.cognitagrc.io" target="_blank" rel="noopener">app.cognitagrc.io</a></div>
   <div class="disc">Standard text under CC BY 4.0; API specification under Apache-2.0. This is a draft for public comment — not legal advice, not a certification scheme, and not affiliated with or endorsed by ISO, IEC, or the European Union. It is designed to complement and extend ISO 10218:2025, ISO 13482, the EU Machinery Regulation 2023/1230, the EU AI Act, and ISO/IEC 42001 — not replace them. No participants, endorsements, or adoptions are claimed; every convenor seat is open.</div>
 </div></footer>
 
@@ -507,7 +585,7 @@ GET  /v1/incidents/{id}/evidence # the verifiable record: told → decided → f
 ## The "answer after an accident"
 One `GET /v1/incidents/{id}/evidence` + `GET /v1/verify` returns, provably: what the robot was told, what it decided, what force it applied and at what level, who authorized anything above PAFC-2, and that the record was not altered. The difference between "we're investigating" and "here is the tamper-evident chain of custody."
 
-## Where Cognita fits (honest framing)
+## Where Cognita fits — steward's interest, declared
 Cognita operates the **hosted trust layer** — identity, attestation, the authorization gate, the tamper-evident ledger + offline verify, the monitoring dashboard, and the incident evidence pack — the same **Discover → Govern → Prove** loop, extended to embodied AI. The **standard and API spec are open** (Apache-2.0) so robot makers can implement or self-host; Cognita's product is the *provable, managed, interoperable* implementation — not ownership of the standard.
 </script>
 
@@ -517,11 +595,11 @@ Cognita operates the **hosted trust layer** — identity, attestation, the autho
 *To be ratified at Session 1.*
 
 ## Who we're convening
-Roboticists · safety & functional-safety engineers · standards-body members (ISO/TC 299, IEC/SC 65A) · regulators & public-safety/law-enforcement experts · AI-governance leaders · ethicists · insurers & liability experts. Convener: **Cognita GRC** (steward, not owner).
+Roboticists · safety & functional-safety engineers · standards-body members (ISO/TC 299, IEC/SC 65A) · regulators & public-safety/law-enforcement experts · AI-governance leaders · ethicists · insurers & liability experts. Convenor: **Cognita GRC** (steward, not owner).
 
 ## Principles
 - **Open by default** — text CC BY 4.0, API spec Apache-2.0; anyone may implement.
-- **Rough consensus** — decisions by working-group consensus; the convener facilitates, does not dictate.
+- **Rough consensus** — decisions by working-group consensus; the convenor facilitates, does not dictate.
 - **Evidence over opinion** — proposals cite standards, incidents, or data.
 - **Public-safety first** — where in doubt, the safer, more human-controlled, more provable option wins.
 
@@ -546,7 +624,20 @@ Draft → RFC (Issue open ≥ 2 weeks) → working-group review → merge on con
 <script>
   /* Minimal inline Markdown renderer — no external dependencies, so the page
      works fully offline. Supports exactly the constructs used by the embedded
-     drafts: h1-h3, hr, blockquotes, fenced code, tables, lists, bold/em/code/links. */
+     drafts: headings, hr, blockquotes, fenced code, tables, lists, bold/em/code/links.
+     Doc headings are demoted one level (# → h2) so the page keeps a single h1;
+     ## sections get anchors + a generated table of contents. */
+  var DOCMETA={
+    force:{id:'PAIG-1',hash:'paig-1',stage:'RFC — open for comment',updated:'July 13, 2026',
+      src:'https://github.com/KGEmmanuel/physical-ai-governance/blob/main/force-continuum/FORCE-CONTINUUM.md',
+      rfc:'https://github.com/KGEmmanuel/physical-ai-governance/issues/1'},
+    embodied:{id:'PAIG-2',hash:'paig-2',stage:'Working Draft',updated:'July 13, 2026',
+      src:'https://github.com/KGEmmanuel/physical-ai-governance/blob/main/embodied-ai-standard/EMBODIED-AI-GOVERNANCE.md'},
+    api:{id:'PAIG-3',hash:'paig-3',stage:'Working Draft',updated:'July 13, 2026',
+      src:'https://github.com/KGEmmanuel/physical-ai-governance/blob/main/api/GOVERNANCE-API.md'},
+    governance:{id:'PAIG-0',hash:'paig-0',stage:'Forming',updated:'July 13, 2026',
+      src:'https://github.com/KGEmmanuel/physical-ai-governance/blob/main/GOVERNANCE.md'}
+  };
   function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
   function inline(s){
     s=esc(s);
@@ -556,24 +647,41 @@ Draft → RFC (Issue open ≥ 2 weeks) → working-group review → merge on con
     s=s.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
     return s;
   }
-  function mdToHtml(src){
-    var lines=src.split('\n'), out=[], i=0;
+  function slug(s){return s.toLowerCase().replace(/<[^>]+>/g,'').replace(/&[a-z]+;/g,'')
+    .replace(/[^a-z0-9\s-]/g,'').trim().replace(/\s+/g,'-').slice(0,60);}
+  function mdToHtml(src,key){
+    var lines=src.split('\n'), out=[], i=0, toc=[];
     function cells(r){return r.replace(/^\s*\|/,'').replace(/\|\s*$/,'').split('|').map(function(c){return c.trim();});}
+    function heading(level,text){
+      var h=inline(text);
+      if(level===3){ /* a ## section: anchor + TOC entry */
+        var id=key+'--'+slug(text);
+        toc.push({id:id,label:h});
+        return '<h3 id="'+id+'">'+h+' <a class="anchor" href="#'+id+'" aria-label="Link to this section">#</a></h3>';
+      }
+      return '<h'+level+'>'+h+'</h'+level+'>';
+    }
     while(i<lines.length){
       var l=lines[i];
       if(/^\s*$/.test(l)){i++;continue;}
       if(/^```/.test(l)){var cb=[];i++;while(i<lines.length&&!/^```/.test(lines[i])){cb.push(lines[i]);i++;}i++;
         out.push('<pre><code>'+esc(cb.join('\n'))+'</code></pre>');continue;}
-      if(/^###\s/.test(l)){out.push('<h3>'+inline(l.slice(4))+'</h3>');i++;continue;}
-      if(/^##\s/.test(l)){out.push('<h2>'+inline(l.slice(3))+'</h2>');i++;continue;}
-      if(/^#\s/.test(l)){out.push('<h1>'+inline(l.slice(2))+'</h1>');i++;continue;}
+      if(/^###\s/.test(l)){out.push(heading(4,l.slice(4)));i++;continue;}
+      if(/^##\s/.test(l)){out.push(heading(3,l.slice(3)));i++;continue;}
+      if(/^#\s/.test(l)){
+        /* doc title; fold an immediately-following "### subtitle" into it */
+        var t=inline(l.slice(2)); i++;
+        if(i<lines.length&&/^###\s/.test(lines[i])){t+='<span class="doc-sub">'+inline(lines[i].slice(4))+'</span>';i++;}
+        out.push('<h2>'+t+'</h2>');continue;}
       if(/^-{3,}\s*$/.test(l)){out.push('<hr>');i++;continue;}
       if(/^>\s?/.test(l)){var bq=[];while(i<lines.length&&/^>\s?/.test(lines[i])){bq.push(lines[i].replace(/^>\s?/,''));i++;}
         out.push('<blockquote><p>'+inline(bq.join(' '))+'</p></blockquote>');continue;}
       if(/^\s*\|/.test(l)){var rows=[];while(i<lines.length&&/^\s*\|/.test(lines[i])){rows.push(lines[i]);i++;}
-        var t='<div class="tablewrap"><table><thead><tr>'+cells(rows[0]).map(function(c){return '<th>'+inline(c)+'</th>';}).join('')+'</tr></thead><tbody>';
-        for(var r=2;r<rows.length;r++){t+='<tr>'+cells(rows[r]).map(function(c){return '<td>'+inline(c)+'</td>';}).join('')+'</tr>';}
-        out.push(t+'</tbody></table></div>');continue;}
+        var heads=cells(rows[0]);
+        var t2='<div class="tablewrap" tabindex="0" role="region" aria-label="Table (scrollable)"><table><thead><tr>'+heads.map(function(c){return '<th>'+inline(c)+'</th>';}).join('')+'</tr></thead><tbody>';
+        for(var r=2;r<rows.length;r++){t2+='<tr>'+cells(rows[r]).map(function(c,ci){
+          return '<td data-label="'+esc(heads[ci]?heads[ci].replace(/\*\*/g,''):'')+'">'+inline(c)+'</td>';}).join('')+'</tr>';}
+        out.push(t2+'</tbody></table></div>');continue;}
       if(/^[-*]\s/.test(l)){var ul=[];while(i<lines.length&&/^[-*]\s/.test(lines[i])){ul.push('<li>'+inline(lines[i].slice(2))+'</li>');i++;}
         out.push('<ul>'+ul.join('')+'</ul>');continue;}
       if(/^\d+\.\s/.test(l)){var ol=[];while(i<lines.length&&/^\d+\.\s/.test(lines[i])){ol.push('<li>'+inline(lines[i].replace(/^\d+\.\s/,''))+'</li>');i++;}
@@ -582,24 +690,58 @@ Draft → RFC (Issue open ≥ 2 weeks) → working-group review → merge on con
       while(i<lines.length&&!/^\s*$/.test(lines[i])&&!/^(#{1,3}\s|```|\s*\||>|-{3,}\s*$|[-*]\s|\d+\.\s)/.test(lines[i])){p.push(lines[i]);i++;}
       out.push('<p>'+inline(p.join(' '))+'</p>');
     }
-    return out.join('\n');
+    return {html:out.join('\n'),toc:toc};
   }
-  function render(id){return mdToHtml(document.getElementById('doc-'+id).textContent.trim());}
-  function showDoc(id,scroll){
-    document.getElementById('viewer').innerHTML=render(id);
+  function render(key){
+    var m=DOCMETA[key];
+    var r=mdToHtml(document.getElementById('doc-'+key).textContent.trim(),key);
+    var meta='<div class="docmeta"><span class="docid">'+m.id+'</span><span>Draft v0.1</span>'+
+      '<span>last updated '+m.updated+'</span><span class="pill">'+m.stage+'</span>'+
+      (m.rfc?'<a href="'+m.rfc+'" target="_blank" rel="noopener">Comment on RFC #1 ↗</a>':'')+
+      '<a href="'+m.src+'" target="_blank" rel="noopener">Source ↗</a></div>';
+    var toc=r.toc.length?'<nav class="toc" aria-label="On this page"><div class="t">On this page</div><ul>'+
+      r.toc.map(function(e){return '<li><a href="#'+e.id+'">'+e.label+'</a></li>';}).join('')+'</ul></nav>':'';
+    return meta+toc+r.html;
+  }
+  var SMOOTH=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+  function showDoc(key,scroll,skipHash){
+    var viewer=document.getElementById('viewer');
+    viewer.innerHTML=render(key);
     document.querySelectorAll('.tab').forEach(function(t){
-      var on=t.dataset.doc===id;
+      var on=t.dataset.doc===key;
       t.classList.toggle('active',on);
       t.setAttribute('aria-selected',on?'true':'false');
+      t.setAttribute('tabindex',on?'0':'-1');
     });
-    if(scroll!==false){document.getElementById('docs').scrollIntoView({behavior:'smooth',block:'start'});}
+    viewer.setAttribute('aria-labelledby','tab-'+key);
+    if(!skipHash&&history.replaceState){history.replaceState(null,'','#'+DOCMETA[key].hash);}
+    if(scroll!==false){
+      document.getElementById('docs').scrollIntoView({behavior:SMOOTH,block:'start'});
+      viewer.focus({preventScroll:true});
+    }
   }
   document.addEventListener('DOMContentLoaded',function(){
-    /* deep links: #paig-0…#paig-3 or #force/#embodied/#api/#governance open the right tab */
+    /* arrow-key navigation on the tablist */
+    var tabs=Array.prototype.slice.call(document.querySelectorAll('.tab'));
+    document.querySelector('.tabs').addEventListener('keydown',function(e){
+      var idx=tabs.indexOf(document.activeElement);
+      if(idx<0)return;
+      var next=null;
+      if(e.key==='ArrowRight'||e.key==='ArrowDown')next=(idx+1)%tabs.length;
+      else if(e.key==='ArrowLeft'||e.key==='ArrowUp')next=(idx-1+tabs.length)%tabs.length;
+      else if(e.key==='Home')next=0; else if(e.key==='End')next=tabs.length-1;
+      if(next!==null){e.preventDefault();tabs[next].focus();showDoc(tabs[next].dataset.doc,false);}
+    });
+    /* deep links: #paig-0…#paig-3, #force/#embodied/#api/#governance,
+       or a heading anchor like #force--3-the-force-continuum */
     var map={'paig-1':'force','paig-2':'embodied','paig-3':'api','paig-0':'governance',
              'force':'force','embodied':'embodied','api':'api','governance':'governance'};
-    var want=map[(location.hash||'').replace('#','').toLowerCase()];
-    showDoc(want||'force',!!want);
+    var raw=(location.hash||'').replace('#','').toLowerCase();
+    var anchorKey=raw.indexOf('--')>0?raw.split('--')[0]:null;
+    var want=map[raw]||(anchorKey&&DOCMETA[anchorKey]?anchorKey:null);
+    showDoc(want||'force',false,true); /* never rewrite the inbound URL on load */
+    if(map[raw]){document.getElementById('docs').scrollIntoView({behavior:'auto',block:'start'});}
+    else if(anchorKey){var el=document.getElementById(raw);if(el){el.scrollIntoView({behavior:'auto',block:'start'});}}
   });
 </script>
 </body>

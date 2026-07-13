@@ -76,7 +76,7 @@ When something goes wrong, one `GET /v1/incidents/{id}/evidence` + `GET /v1/veri
 
 That is the difference between "we're investigating" and "here is the tamper-evident chain of custody" — and it's the layer Cognita provides.
 
-## Where Cognita fits (honest framing)
+## Where Cognita fits — steward's interest, declared
 
 Cognita operates the **hosted trust layer**: identity issuance, attestation, the authorization gate, the tamper-evident ledger + offline `verify`, the monitoring dashboard, and the incident evidence pack — the same **Discover → Govern → Prove** loop Cognita runs for software AI, extended to embodied AI. The **standard and the API spec are open** (Apache-2.0) so robot makers can implement or self-host; Cognita's product is the *provable, managed, interoperable* implementation — not ownership of the standard.
 

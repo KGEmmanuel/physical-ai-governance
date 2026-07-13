@@ -3,11 +3,11 @@
 *How this open standard is built and decided. To be ratified at Session 1.*
 
 ## Who we're convening
-Roboticists · safety & functional-safety engineers · standards-body members (ISO/TC 299, IEC/SC 65A) · regulators & public-safety/law-enforcement experts · AI-governance leaders · ethicists · insurers & liability experts. Convener: **Cognita GRC** (steward, not owner).
+Roboticists · safety & functional-safety engineers · standards-body members (ISO/TC 299, IEC/SC 65A) · regulators & public-safety/law-enforcement experts · AI-governance leaders · ethicists · insurers & liability experts. Convenor: **Cognita GRC** (steward, not owner).
 
 ## Principles
 - **Open by default** — text CC BY 4.0, API spec Apache-2.0; anyone may implement.
-- **Rough consensus** — decisions by working-group consensus; the convener facilitates, does not dictate.
+- **Rough consensus** — decisions by working-group consensus; the convenor facilitates, does not dictate.
 - **Evidence over opinion** — proposals cite standards, incidents, or data.
 - **Public-safety first** — where in doubt, the safer, more human-controlled, more provable option wins.
 
