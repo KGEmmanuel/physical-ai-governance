@@ -1,0 +1,12 @@
+{
+  "name": "physical-ai-governance",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Physical AI Governance — an open standard for embodied AI safety (PAIG). Static site + working drafts.",
+  "scripts": {
+    "start": "npx serve -s . -l tcp://0.0.0.0:$PORT"
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}
